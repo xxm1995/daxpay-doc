@@ -1,0 +1,55 @@
+.qs-mindmap {
+  background-color: #444;
+  color: #fff;
+
+  // 方框
+  .rect {
+    .title {
+      background-color: inherit;
+      color: #fff;
+      border-radius: 1rem;
+    }
+  }
+
+  // 标题内容
+  .title {
+    cursor: pointer;
+    height: inherit;
+    line-height: 180%;
+    // color: #405f88;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 0.4rem;
+    border-radius: 1rem;
+  }
+
+  // 激活
+  .title:hover {
+    background-color: #ff9900;
+    color: #fff;
+  }
+
+  // 点击
+  .title.active {
+    background-color: #ff6600;
+    color: #fff;
+  }
+
+  // 节点样式
+  .dot {
+    cursor: pointer;
+    font-size: 0.6rem;
+    font-weight: 400;
+    width: inherit;
+    height: inherit;
+    line-height: 180%;
+    text-align: center;
+    background-color: inherit;
+    color: #fff;
+    &:hover {
+      background-color: #ff9900;
+      color: #fff;
+    }
+  }
+}
