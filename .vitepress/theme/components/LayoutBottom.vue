@@ -1,6 +1,6 @@
 <template>
   <div class="layout-bottom">
-    本文档内容版权属于 Bootx 组织，保留所有权利
+    本文档内容版权属于济南易杯光年软件技术有限公司
   </div>
 </template>
 
