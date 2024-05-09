@@ -7,14 +7,14 @@ import {HeadConfig} from "vitepress/types/shared";
 import {DaxpaySingle} from "./doc/daxpay-single";
 
 const ogDescription =
-    '开源、精美、便捷、规范、交互自然。'
+    '开源、便捷、全面、安全、功能完整。'
 const ogImage = '/logo.png'
-const ogTitle = 'Bootx'
+const ogTitle = 'single'
 const ogUrl = '/'
 
 export default defineConfig({
-    title: 'Bootx 开源文档站',
-    description: '一个多功能的开源项目集',
+    title: 'single文档站',
+    description: 'single开源支付系统文档站',
     lang: 'zh-CN',
     outDir: './dist',
     lastUpdated: true,
@@ -24,7 +24,7 @@ export default defineConfig({
         logo: '/logo.png',
         editLink: {
             text: '为此页提供修改建议',
-            pattern: 'https://gitee.com/bootx/bootx/blob/master/:path'
+            pattern: 'https://https://github.com/xxm1995/single-doc/blob/master/:path'
         },
         // 开启本地搜索
         search : {
@@ -84,21 +84,53 @@ function createNav() {
         {
             text: '概述',
             items: [
+                {
+                    text: "快速指南",
+                    link: "/single/guides/overview/项目介绍",
+                },
+                {
+                    text: "个版差异",
+                    link: "/single/guides/develop/项目启动",
+                },
+                {
+                    text: "FAQ",
+                    link: "/single/guides/other/常见问题",
+                },
             ]
         },
         {
             text: "单商户",
             items: [
+                {
+                    text: "快速指南",
+                    link: "/single/guides/overview/项目介绍",
+                },
+                {
+                    text: "接口对接",
+                    link: "/single/gateway/overview/接口清单",
+                },
+                {
+                    text: "操作手册",
+                    link: "/single/admin/config/平台配置",
+                },
             ]
         },
         {
             text: "多商户",
             items: [
+                {
+                    text: "概述(开发中)",
+                    link: "/platform/front/mobile/移动端介绍",
+                },
             ]
         },
         {
             text: "商业版",
             items: [
+                {
+                    text: "概述(开发中)",
+                    link: "/platform/front/mobile/移动端介绍",
+                },
             ]
         },
         {
@@ -137,15 +169,15 @@ function createNav() {
             items: [
                 {
                     text: '单商户管理端',
-                    link: 'http://daxpay.demo.bootx.cn/',
+                    link: 'http://single.demo.bootx.cn/',
                 },
                 {
                     text: '多商户管理端',
-                    link: 'http://daxpay.demo.bootx.cn/',
+                    link: 'http://single.demo.bootx.cn/',
                 },
                 {
                     text: '多商户商户端',
-                    link: 'http://daxpay.demo.bootx.cn/',
+                    link: 'http://single.demo.bootx.cn/',
                 }
             ],
         },
