@@ -27,19 +27,19 @@ export const DaxPayCommon = {
     ],
     '/common/guides/': [
         {
-            text: "用户协议",
+            text: "概述",
             items: [
                 {
-                    text: '单商户版',
-                    link: '/common/guides/单商户版',
+                    text: '项目介绍',
+                    link: '/common/guides/项目介绍',
                 },
                 {
-                    text: '多商户版',
-                    link: '/common/guides/多商户版',
+                    text: '版本差异',
+                    link: '/common/guides/版本差异',
                 },
                 {
-                    text: '商业版',
-                    link: '/common/guides/商业版',
+                    text: '常见问题',
+                    link: '/common/guides/常见问题',
                 },
             ]
         },

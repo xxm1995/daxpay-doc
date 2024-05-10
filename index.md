@@ -5,8 +5,8 @@ title: DaxPay
 titleTemplate: DaxPay文档站
 
 hero:
-  name: Dax-Pay文档站
-  text: DaxPay开源支付系统
+  name: DaxPay
+  text: 开源支付系统
   tagline: '开源、便捷、全面、安全、功能完整 '
   image:
     src: /daxpay-logo.png

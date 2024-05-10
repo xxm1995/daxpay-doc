@@ -26,7 +26,7 @@ export default defineConfig({
         logo: '/logo.png',
         editLink: {
             text: '为此页提供修改建议',
-            pattern: 'https://https://github.com/xxm1995/single-doc/blob/master/:path'
+            pattern: 'https://github.com/xxm1995/daxpay-doc/blob/master/:path'
         },
         // 开启本地搜索
         search : {
@@ -88,15 +88,15 @@ function createNav() {
             items: [
                 {
                     text: "项目介绍",
-                    link: "/guides/项目介绍",
+                    link: "/common/guides/项目介绍",
                 },
                 {
                     text: "版本差异",
-                    link: "/guides/版本差异",
+                    link: "/common/guides/版本差异",
                 },
                 {
                     text: "FAQ",
-                    link: "/guides/常见问题",
+                    link: "/common/guides/常见问题",
                 },
             ]
         },
