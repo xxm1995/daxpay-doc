@@ -1,7 +1,7 @@
 /**
- * 支付平台文档
+ * 单商户版文档
  */
-export const DaxpaySingle = {
+export const DaxPaySingle = {
     '/single/guides/': [
         {
             text: "基础说明",

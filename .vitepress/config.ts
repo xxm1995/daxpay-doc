@@ -4,7 +4,9 @@ import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 // @ts-check
 import {HeadConfig} from "vitepress/types/shared";
 
-import {DaxpaySingle} from "./doc/daxpay-single";
+import {DaxPaySingle} from "./doc/dax-pay-single";
+import {DaxPayMulti} from "./doc/dax-pay-multi";
+import {DaxPayCommon} from "./doc/dax-pay-common";
 
 const ogDescription =
     '开源、便捷、全面、安全、功能完整。'
@@ -13,8 +15,8 @@ const ogTitle = 'single'
 const ogUrl = '/'
 
 export default defineConfig({
-    title: 'single文档站',
-    description: 'single开源支付系统文档站',
+    title: 'DaxPay文档站',
+    description: 'DaxPay开源支付系统文档站',
     lang: 'zh-CN',
     outDir: './dist',
     lastUpdated: true,
@@ -85,16 +87,16 @@ function createNav() {
             text: '概述',
             items: [
                 {
-                    text: "快速指南",
-                    link: "/single/guides/overview/项目介绍",
+                    text: "项目介绍",
+                    link: "/guides/项目介绍",
                 },
                 {
-                    text: "个版差异",
-                    link: "/single/guides/develop/项目启动",
+                    text: "版本差异",
+                    link: "/guides/版本差异",
                 },
                 {
                     text: "FAQ",
-                    link: "/single/guides/other/常见问题",
+                    link: "/guides/常见问题",
                 },
             ]
         },
@@ -119,8 +121,8 @@ function createNav() {
             text: "多商户",
             items: [
                 {
-                    text: "概述(开发中)",
-                    link: "/platform/front/mobile/移动端介绍",
+                    text: "快速指南(开发中)",
+                    link: "/platform/front/mobile/快速指南",
                 },
             ]
         },
@@ -128,7 +130,7 @@ function createNav() {
             text: "商业版",
             items: [
                 {
-                    text: "概述(开发中)",
+                    text: "快速指南(开发中)",
                     link: "/platform/front/mobile/移动端介绍",
                 },
             ]
@@ -136,18 +138,39 @@ function createNav() {
         {
             text: "用户协议",
             items: [
+                {
+                    text: "单商户版",
+                    link: "/common/protocol/单商户版",
+                },
+                {
+                    text: "多商户版",
+                    link: "/common/protocol/多商户版",
+                },
+                {
+                    text: "商业版",
+                    link: "/common/protocol/商业版",
+                },
+                {
+                    text: "企业版",
+                    link: "/common/protocol/企业版",
+                },
+
             ]
         },
         {
             text: '源码',
             items: [
                 {
-                    text: '单商户后端',
+                    text: '后端(单商户)',
                     link: 'https://gitee.com/dromara/dax-pay',
                 },
                 {
-                    text: '单商户前端',
-                    link: 'https://gitee.com/dromara/dax-pay',
+                    text: '前端(单商户)',
+                    link: 'https://gitee.com/bootx/dax-pay-ui',
+                },
+                {
+                    text: 'H5(单商户)',
+                    link: 'https://gitee.com/bootx/dax-pay-h5',
                 },
             ],
         },
@@ -169,16 +192,8 @@ function createNav() {
             items: [
                 {
                     text: '单商户管理端',
-                    link: 'http://single.demo.bootx.cn/',
+                    link: 'https://daxpay.demo.bootx.cn/',
                 },
-                {
-                    text: '多商户管理端',
-                    link: 'http://single.demo.bootx.cn/',
-                },
-                {
-                    text: '多商户商户端',
-                    link: 'http://single.demo.bootx.cn/',
-                }
             ],
         },
     ];
@@ -189,7 +204,11 @@ function createNav() {
  */
 function createSidebar() {
     return {
+        // 公共
+        ...DaxPayCommon,
         // 开源支付网关单商户版
-        ...DaxpaySingle,
+        ...DaxPaySingle,
+        // 开源支付网关单多户版
+        ...DaxPayMulti,
     }
 }
