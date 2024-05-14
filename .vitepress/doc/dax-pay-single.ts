@@ -60,6 +60,10 @@ export const DaxPaySingle = {
                     text: '常量和状态表',
                     link: '/single/guides/other/常量和状态表',
                 },
+                {
+                    text: '更新记录',
+                    link: '/single/guides/other/更新记录',
+                },
             ]
         },
     ],
