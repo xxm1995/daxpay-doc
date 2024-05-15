@@ -8,6 +8,8 @@ SDK是基于Java开发的，除依赖`hutool`工具包外，不与任何第三�
 
 在项目中引入sdk依赖，SDK与网关项目版本号保持一致，如网关项目为2.0.0，sdk版本为2.0.0，跨版本可能会产生兼容性问题。
 
+最近版本见 [maven中央仓库](https://mvnrepository.com/artifact/cn.daxpay.single/daxpay-single-sdk)
+
 ```xml
   <dependency>
     <groupId>cn.daxpay.single</groupId>
@@ -215,11 +217,11 @@ import lombok.Setter;
 @Setter
 public class DivideOrderParam extends DaxPayRequest<DivideOrderModel> {
 
-    /** 支付ID */
-    private Long paymentId;
+    /** 商户订单号 */
+    private String orderNo;
 
-    /** 业务号 */
-    private String businessNo;
+    /** 商户订单号 */
+    private String bizOrderNo;
 
     /**
      * 方法请求路径
