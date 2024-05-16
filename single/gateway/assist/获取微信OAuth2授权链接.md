@@ -14,13 +14,13 @@
 
 ## 请求参数
 
-| 字段名<img width=70/> | 变量名   | 必填 | 类型   | 示例值                                           | 描述<img width=200/>                                         |
-| --------------------- | -------- | ---- | ------ | ------------------------------------------------ | ------------------------------------------------------------ |
-| 回调地址              | url      | 是   | String | https://daxpay.demo.bootx.cn/h5/#/result/success | 不可以携带参数，因为授权成功进行回调时会加入                 |
-| 原因返回的回调值      | state    | 否   | String | 892e382a7093b81e6a                               | 重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节 |
-| 用户IP                | clientIp | 否   | String | 127.0.0.1                                        | 支持V4和V6，部分支付方式要求必填，如调用微信支付方式时Long |
-| 请求时间              | reqTime  | 是   | Long   | 123123121                                        | 使用时间戳(秒级)                                             |
-| 签名值                | sign     | 否   | String | 072695d112892e382a7093b81e6a52af                 | 如果在后台系统中开启验签选项后必填                           |
+| 字段名<img width=70/> | 变量名      | 必填 | 类型     | 示例值                                              | 描述<img width=200/>                          |
+|--------------------|----------|----|--------|--------------------------------------------------|---------------------------------------------|
+| 回调地址               | url      | 是  | String | https://daxpay.demo.bootx.cn/h5/#/result/success | 不可以携带参数，因为授权成功进行回调时会加入                      |
+| 原因返回的回调值           | state    | 否  | String | 892e382a7093b81e6a                               | 重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节 |
+| 用户IP               | clientIp | 否  | String | 127.0.0.1                                        | 支持V4和V6，部分支付方式要求必填，如调用微信支付方式时Long           |
+| 请求时间               | reqTime  | 是  | Long   | 123123121                                        | 使用时间戳(秒级)                                   |
+| 签名值                | sign     | 否  | String | 072695d112892e382a7093b81e6a52af                 |                                             |
 
 ## 响应结果
 
@@ -32,18 +32,20 @@
 
 > 请配合查阅微信公众平台相关文档一起使用，文档地址：[微信网页授权文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)
 
-| 字段名<img width=70/> | 变量名 | 必传 | 类型   | 示例值                                                       |
-| --------------------- | ------ | ---- | ------ | ------------------------------------------------------------ |
-| 微信oauth2授权的url   | url    | 是   | String | https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9xxxxxf030e85&redirect_uri=https%3A%2F%2Fdaxpay.demo.bootx.cn%2Fserver%2Fdemo%2Fcashier%2FwxAuthCallback&response_type=code&scope=snsapi_base&state=&connect_redirect=1#wechat_redirect |
-
+| 字段名<img width=70/> | 变量名     | 必传 | 类型      | 示例值                                                                                                                                                                                                                                                 | 描述         |
+|--------------------|---------|----|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| 微信oauth2授权的url     | url     | 是  | String  | https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9xxxxxf030e85&redirect_uri=https%3A%2F%2Fdaxpay.demo.bootx.cn%2Fserver%2Fdemo%2Fcashier%2FwxAuthCallback&response_type=code&scope=snsapi_base&state=&connect_redirect=1#wechat_redirect |            |
+| 状态码                | code    | 是  | Integer | 0                                                                                                                                                                                                                                                   |            |
+| 错误信息               | msg     | 否  | String  | 关闭失败                                                                                                                                                                                                                                                | 状态非0时会有返回值 |
+| 响应时间               | resTime | 是  | Long    | 123123121                                                                                                                                                                                                                                           |            |
+| 签名                 | sign    | 是  | String  | 072695d112892e382a7093b81e6a52af                                                                                                                                                                                                                    | 对响应内容进行签名  |
 
 ## 错误码
 
-| 状态码<img width=70/> | 名称 | 备注     |
-| --------------------- | ---- | -------- |
-| 0                     | 成功 | 获取成功 |
-| 20000                 | 失败 | 获取失败 |
-|                       |      |          |
+| 状态码<img width=70/> | 名称 | 备注   |
+|--------------------|----|------|
+| 0                  | 成功 | 获取成功 |
+|                    |    |      |
 
 
 ## HTTP请求示例
@@ -53,7 +55,7 @@
 ```json
 {
   "clientIp": "127.0.0.1",
-  "sign": "",
+  "sign": "458565a54e959fa206dcda9b44eecaf0d5907e8af40f9457d404e533e092a9ed",
   "reqTime": "123457711",
   "url": "https://daxpay.demo.bootx.cn/h5/#/result/success",
   "state": "1705441100211"
@@ -64,13 +66,15 @@
 
 ```json
 {
-	"msg": "",
-	"code": 0,
-	"data": {
-		"url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9xxxxxf030e85&redirect_uri=https%3A%2F%2Fdaxpay.demo.bootx.cn%2Fserver%2Fdemo%2Fcashier%2FwxAuthCallback&response_type=code&scope=snsapi_base&state=&connect_redirect=1#wechat_redirect" 
-	},
-	"sign": "",
-	"traceId": "vHugexb46msh"
+  "msg": "success",
+  "code": 0,
+  "data": {
+    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9xxxxxf030e85&redirect_uri=https%3A%2F%2Fdaxpay.demo.bootx.cn%2Fserver%2Fdemo%2Fcashier%2FwxAuthCallback&response_type=code&scope=snsapi_base&state=&connect_redirect=1#wechat_redirect",
+    "sign": "fc35c71844a49f5ca0cd3aebea65395b13e672d607f7d7788ec4c49e6c062849",
+    "code": "0",
+    "resTime": 1715345598
+  },
+  "traceId": "sNiSFTXDufTR"
 }
 ```
 
@@ -78,10 +82,15 @@
 
 ```json
 {
-  "msg": "未通过签名验证",
-  "code": 20000,
-  "data": null,
-  "traceId": "vHugexb46msh"
+  "msg": "success",
+  "code": 0,
+  "data": {
+    "sign": "2bcc5ac7902379d65dc9901186cd81a2833835a30d5a59b3b1860df82f012557",
+    "code": "1",
+    "msg": "校验失败",
+    "resTime": 1715345296
+  },
+  "traceId": "7UEqCd1v3fcZ"
 }
 ```
 

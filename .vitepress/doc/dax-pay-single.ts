@@ -76,10 +76,6 @@ export const DaxPaySingle = {
                     link: '/single/gateway/overview/接口清单',
                 },
                 {
-                    text: '业务系统接入',
-                    link: '/single/gateway/overview/业务系统接入',
-                },
-                {
                     text: '签名规则',
                     link: '/single/gateway/overview/签名规则',
                 },
