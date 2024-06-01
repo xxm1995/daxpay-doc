@@ -104,6 +104,10 @@ export const DaxPaySingle = {
                     text: '退款订单通知',
                     link: '/single/gateway/notice/退款订单通知',
                 },
+                {
+                    text: '分账订单通知',
+                    link: '/single/gateway/notice/分账订单通知',
+                },
             ]
         },
         {
@@ -129,6 +133,18 @@ export const DaxPaySingle = {
                     text: '退款同步接口',
                     link: '/single/gateway/payment/退款同步接口',
                 },
+                {
+                    text: '统一分账接口',
+                    link: '/single/gateway/payment/统一分账接口',
+                },
+                {
+                    text: '分账完结接口',
+                    link: '/single/gateway/payment/分账完结接口',
+                },
+                {
+                    text: '分账同步接口',
+                    link: '/single/gateway/payment/分账同步接口',
+                }
 
             ]
         },
@@ -143,11 +159,28 @@ export const DaxPaySingle = {
                     text: '查询退款订单',
                     link: '/single/gateway/query/查询退款订单',
                 },
+                {
+                    text: '分账订单查询接口',
+                    link: '/single/gateway/query/分账订单查询接口',
+                },
+                {
+                    text: '分账接收方查询接口',
+                    link: '/single/gateway/query/分账接收方查询接口',
+                },
+
             ]
         },
         {
             text: '接口清单(支撑性)',
             items: [
+                {
+                    text: '分账接收方添加接口',
+                    link: '/single/gateway/assist/分账接收方添加接口',
+                },
+                {
+                    text: '分账接收方删除接口',
+                    link: '/single/gateway/assist/分账接收方删除接口',
+                },
                 {
                     text: '获取微信OAuth2授权链接',
                     link: '/single/gateway/assist/获取微信OAuth2授权链接',
