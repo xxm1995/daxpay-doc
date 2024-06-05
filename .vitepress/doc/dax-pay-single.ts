@@ -122,6 +122,10 @@ export const DaxPaySingle = {
                     link: '/single/gateway/payment/支付关闭接口',
                 },
                 {
+                    text: '支付撤销接口',
+                    link: '/single/gateway/payment/支付撤销接口',
+                },
+                {
                     text: '支付同步接口',
                     link: '/single/gateway/payment/支付同步接口',
                 },
