@@ -108,6 +108,10 @@ export const DaxPaySingle = {
                     text: '分账订单通知',
                     link: '/single/gateway/notice/分账订单通知',
                 },
+                {
+                    text: '转账订单通知',
+                    link: '/single/gateway/notice/转账订单通知',
+                },
             ]
         },
         {
@@ -148,7 +152,15 @@ export const DaxPaySingle = {
                 {
                     text: '分账同步接口',
                     link: '/single/gateway/payment/分账同步接口',
-                }
+                },
+                {
+                    text: '统一转账接口',
+                    link: '/single/gateway/payment/统一转账接口',
+                },
+                {
+                    text: '转账同步接口',
+                    link: '/single/gateway/payment/转账同步接口',
+                },
 
             ]
         },
