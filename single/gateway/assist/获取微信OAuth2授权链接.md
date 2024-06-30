@@ -106,15 +106,14 @@
 :::
 
 ```java
-package cn.bootx.platform.daxpay.sdk;
+package cn.daxpay.single.sdk;
 
-import cn.bootx.platform.daxpay.sdk.code.PayChannelEnum;
-import cn.bootx.platform.daxpay.sdk.code.PayWayEnum;
-import cn.bootx.platform.daxpay.sdk.model.PayOrderModel;
-import cn.bootx.platform.daxpay.sdk.net.DaxPayConfig;
-import cn.bootx.platform.daxpay.sdk.net.DaxPayKit;
-import cn.bootx.platform.daxpay.sdk.param.pay.SimplePayParam;
-import cn.bootx.platform.daxpay.sdk.response.DaxPayResult;
+import cn.daxpay.single.sdk.code.PayChannelEnum;
+import cn.daxpay.single.sdk.code.PayWayEnum;
+import cn.daxpay.single.sdk.model.PayOrderModel;
+import cn.daxpay.single.sdk.net.DaxPayConfig;
+import cn.daxpay.single.sdk.net.DaxPayKit;
+import cn.daxpay.single.sdk.response.DaxPayResult;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -123,7 +122,7 @@ import org.junit.Test;
  * @author xxm
  * @since 2024/2/2
  */
-public class SimplePayOrderTest {
+public class SimpleTest {
 
     @Before
     public void init() {

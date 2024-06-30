@@ -42,11 +42,11 @@ SDK是基于Java开发的，除依赖`hutool`工具包外，不与任何第三�
 **核心源码**
 
 ```java
-package cn.bootx.platform.daxpay.sdk.net;
+package cn.daxpay.single.sdk.net;
 
-import cn.bootx.platform.daxpay.sdk.code.SignTypeEnum;
-import cn.bootx.platform.daxpay.sdk.response.DaxPayResult;
-import cn.bootx.platform.daxpay.sdk.util.PaySignUtil;
+import cn.daxpay.single.sdk.code.SignTypeEnum;
+import cn.daxpay.single.sdk.response.DaxPayResult;
+import cn.daxpay.single.sdk.util.PaySignUtil;
 import cn.hutool.http.ContentType;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
@@ -112,25 +112,25 @@ public class DaxPayKit {
 
 ## 简单支付样例
 ```java
+package cn.daxpay.single.sdk.payment;
 
-package cn.bootx.platform.daxpay.sdk.payment;
-
-import cn.bootx.platform.daxpay.sdk.code.PayChannelEnum;
-import cn.bootx.platform.daxpay.sdk.code.PayWayEnum;
-import cn.bootx.platform.daxpay.sdk.model.pay.PayOrderModel;
-import cn.bootx.platform.daxpay.sdk.net.DaxPayConfig;
-import cn.bootx.platform.daxpay.sdk.net.DaxPayKit;
-import cn.bootx.platform.daxpay.sdk.param.pay.SimplePayParam;
-import cn.bootx.platform.daxpay.sdk.response.DaxPayResult;
+import cn.daxpay.single.sdk.code.PayChannelEnum;
+import cn.daxpay.single.sdk.code.PayMethodEnum;
+import cn.daxpay.single.sdk.code.SignTypeEnum;
+import cn.daxpay.single.sdk.model.pay.PayModel;
+import cn.daxpay.single.sdk.net.DaxPayConfig;
+import cn.daxpay.single.sdk.net.DaxPayKit;
+import cn.daxpay.single.sdk.param.pay.PayParam;
+import cn.daxpay.single.sdk.response.DaxPayResult;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * 简单支付
+ * 统一支付接口
  * @author xxm
- * @since 2024/2/2
+ * @since 2024/2/5
  */
-public class SimplePayOrderTest {
+public class PayOrderTest {
 
     @Before
     public void init() {
@@ -138,26 +138,32 @@ public class SimplePayOrderTest {
         DaxPayConfig config = DaxPayConfig.builder()
                 .serviceUrl("http://127.0.0.1:9000")
                 .signSecret("123456")
+                .signType(SignTypeEnum.HMAC_SHA256)
                 .build();
         DaxPayKit.initConfig(config);
     }
 
+    /**
+     * 支付
+     */
     @Test
-    public void simplePay() {
-        // 简单支付参数
-        SimplePayParam param = new SimplePayParam();
-        param.setBusinessNo("1");
-        param.setAmount(1);
-        param.setTitle("测试接口支付");
-        param.setChannel(PayChannelEnum.ALI.getCode());
-        param.setPayWay(PayWayEnum.QRCODE.getCode());
+    public void pay() {
+        PayParam param = new PayParam();
         param.setClientIp("127.0.0.1");
         param.setNotNotify(true);
 
-        DaxPayResult<PayOrderModel> execute = DaxPayKit.execute(param);
-        System.out.println(execute);
-        PayOrderModel data = execute.getData();
-        System.out.println(data);
+        param.setBizOrderNo("SDK_"+ System.currentTimeMillis());
+        param.setTitle("测试接口支付");
+        param.setDescription("这是支付备注");
+        param.setAmount(100);
+        param.setChannel(PayChannelEnum.ALI.getCode());
+        param.setMethod(PayMethodEnum.QRCODE.getCode());
+        param.setAttach("{回调参数}");
+        param.setAllocation(false);
+        param.setReturnUrl("https://abc.com/callback");
+
+        DaxPayResult<PayModel> execute = DaxPayKit.execute(param);
+        System.out.println(JSONUtil.toJsonStr(execute));
     }
 }
 ```
@@ -171,9 +177,9 @@ public class SimplePayOrderTest {
 > 新建一个继承`DaxPayResponseModel`抽象类的响应类，如下面`DivideOrderResponse`的例子
 
 ```java
-package cn.bootx.platform.daxpay.sdk.model.divide;
+package cn.daxpay.single.sdk.model.divide;
 
-import cn.bootx.platform.daxpay.sdk.net.DaxPayResponseModel;
+import cn.daxpay.single.sdk.net.DaxPayResponseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -198,11 +204,11 @@ public class DivideOrderModel extends DaxPayResponseModel {
 >  新建一个继承`DaxPayRequest<T>`抽象类的响应类，并实现其中的接口，如下面`DivideOrderParam`的例子
 
 ```java
-package cn.bootx.platform.daxpay.sdk.param;
+package cn.daxpay.single.sdk.param;
 
-import cn.bootx.platform.daxpay.sdk.model.divide.DivideOrderModel;
-import cn.bootx.platform.daxpay.sdk.net.DaxPayRequest;
-import cn.bootx.platform.daxpay.sdk.response.DaxPayResult;
+import cn.daxpay.single.sdk.model.divide.DivideOrderModel;
+import cn.daxpay.single.sdk.net.DaxPayRequest;
+import cn.daxpay.single.sdk.response.DaxPayResult;
 import cn.hutool.core.lang.TypeReference;
 import cn.hutool.json.JSONUtil;
 import lombok.Getter;
