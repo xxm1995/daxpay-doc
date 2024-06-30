@@ -28,5 +28,43 @@ export const DaxPayMulti = {
                 },
             ]
         },
-    ]
+        {
+            text: "配置和运行",
+            items: [
+                {
+                    text: '项目启动',
+                    link: '/multi/guides/develop/项目启动',
+                },
+                {
+                    text: '配置说明',
+                    link: '/multi/guides/develop/配置说明',
+                },
+                {
+                    text: '数据库说明',
+                    link: '/multi/guides/develop/数据库说明',
+                },
+                {
+                    text: '系统部署',
+                    link: '/multi/guides/develop/系统部署',
+                },
+            ]
+        },
+        {
+            text: "FAQ",
+            items: [
+                {
+                    text: '常见问题',
+                    link: '/multi/guides/other/常见问题',
+                },
+                {
+                    text: '常量和状态表',
+                    link: '/multi/guides/other/常量和状态表',
+                },
+                {
+                    text: '更新记录',
+                    link: '/multi/guides/other/更新记录',
+                },
+            ]
+        },
+    ],
 }

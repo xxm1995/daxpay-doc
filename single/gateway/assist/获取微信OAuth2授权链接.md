@@ -19,7 +19,7 @@
 | 回调地址               | url      | 是  | String | 200 | https://daxpay.demo.bootx.cn/h5/#/result/success | 不可以携带参数，因为授权成功进行回调时会加入                      |
 | state值     | state    | 否  | String | 128                            | 892e382a7093b81e6a                               | 重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节 |
 | 用户IP               | clientIp | 否  | String | 64                                      | 127.0.0.1                                        | 支持V4和V6，部分支付方式要求必填，如调用微信支付方式时Long           |
-| 随机数                | nonceStr       | 否  | String            |     32   | d112892e382a7093                 ||
+| 随机数值                | nonceStr       | 否  | String            |     32   | d112892e382a7093                 ||
 | 签名值                | sign     | 否  | String | 64 | 072695d112892e382a7093b81e6a52af                 |                                             |
 | 请求时间               | reqTime  | 是  | Long   |                                         | 123123121                                        | 使用时间戳(秒级)                                   |
 
@@ -40,13 +40,6 @@
 | 错误信息               | msg     | 否  | String  | 关闭失败                                                                                                                                                                                                                                                | 状态非0时会有返回值 |
 | 响应时间               | resTime | 是  | Long    | 123123121                                                                                                                                                                                                                                           |            |
 | 签名                 | sign    | 是  | String  | 072695d112892e382a7093b81e6a52af                                                                                                                                                                                                                    | 对响应内容进行签名  |
-
-## 错误码
-
-| 状态码<img width=70/> | 名称 | 备注   |
-|--------------------|----|------|
-| 0                  | 成功 | 获取成功 |
-|                    |    |      |
 
 
 ## HTTP请求示例

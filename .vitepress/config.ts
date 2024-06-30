@@ -121,8 +121,20 @@ function createNav() {
             text: "多商户",
             items: [
                 {
-                    text: "快速指南(开发中)",
-                    link: "/platform/front/mobile/快速指南",
+                    text: "快速指南",
+                    link: "/multi/guides/overview/项目介绍",
+                },
+                {
+                    text: "接口对接",
+                    link: "/multi/gateway/overview/接口清单",
+                },
+                {
+                    text: "运营端",
+                    link: "/multi/admin/config/运营端",
+                },
+                {
+                    text: "商户端",
+                    link: "/multi/merchant/config/商户端",
                 },
             ]
         },
@@ -161,29 +173,12 @@ function createNav() {
             text: '源码',
             items: [
                 {
-                    text: '后端(单商户)',
+                    text: 'GITEE',
                     link: 'https://gitee.com/dromara/dax-pay',
                 },
                 {
-                    text: '前端(单商户)',
-                    link: 'https://gitee.com/bootx/dax-pay-ui',
-                },
-                {
-                    text: 'H5(单商户)',
-                    link: 'https://gitee.com/bootx/dax-pay-h5',
-                },
-            ],
-        },
-        {
-            text: '交流群',
-            items: [
-                {
-                    text: 'QQ群：939414255',
-                    link: 'https://qm.qq.com/cgi-bin/qm/qr?k=hPIJw0BLRMONMZCYLUtB5wWHqumhOpCw&authKey=m3YVb3vcRR0MtBlXLEMfTAhxBlOlLtobsF8Otipp6N0DqdUn55q0G/e7HhnvtsY2&noverify=0',
-                },
-                {
-                    text: '钉钉群',
-                    link: 'https://qm.qq.com/cgi-bin/qm/qr?k=hPIJw0BLRMONMZCYLUtB5wWHqumhOpCw&authKey=m3YVb3vcRR0MtBlXLEMfTAhxBlOlLtobsF8Otipp6N0DqdUn55q0G/e7HhnvtsY2&noverify=0',
+                    text: 'GITHUB',
+                    link: 'https://github.com/dromara/dax-pay',
                 },
             ],
         },

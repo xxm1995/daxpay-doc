@@ -176,7 +176,11 @@ export const DaxPaySingle = {
                     link: '/single/gateway/query/查询退款订单',
                 },
                 {
-                    text: '分账订单查询接口',
+                    text: '查询转账订单',
+                    link: '/single/gateway/query/查询转账订单',
+                },
+                {
+                    text: '查询分账订单',
                     link: '/single/gateway/query/分账订单查询接口',
                 },
                 {
