@@ -24,9 +24,5 @@
   "dependencies": {
     "quick-svg": "^0.0.6",
     "vue": "3.3.4"
-  },
-  "engines": {
-    "node": ">=18.12.0",
-    "pnpm": ">=9.0.2"
   }
 }
