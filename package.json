@@ -23,6 +23,6 @@
   },
   "dependencies": {
     "quick-svg": "^0.0.6",
-    "vue": "3.3.4"
+    "vue": "^3.3.4"
   }
 }
