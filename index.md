@@ -17,7 +17,7 @@ hero:
       text: 单商户
       link: /single/guides/overview/项目介绍
     - theme: alt
-      text: 多商户（建设中）
+      text: 商业版
       link: /overview/guide/项目介绍
 features:
   - icon: 💡

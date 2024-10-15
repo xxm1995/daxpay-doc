@@ -118,7 +118,7 @@ function createNav() {
             ]
         },
         {
-            text: "多商户",
+            text: "商业版",
             items: [
                 {
                     text: "快速指南",
@@ -139,15 +139,6 @@ function createNav() {
             ]
         },
         {
-            text: "商业版",
-            items: [
-                {
-                    text: "快速指南(开发中)",
-                    link: "/platform/front/mobile/移动端介绍",
-                },
-            ]
-        },
-        {
             text: "用户协议",
             items: [
                 {
@@ -155,18 +146,9 @@ function createNav() {
                     link: "/common/protocol/单商户版",
                 },
                 {
-                    text: "多商户版",
+                    text: "商业版",
                     link: "/common/protocol/多商户版",
                 },
-                {
-                    text: "商业版",
-                    link: "/common/protocol/商业版",
-                },
-                {
-                    text: "企业版",
-                    link: "/common/protocol/企业版",
-                },
-
             ]
         },
         {
@@ -180,14 +162,18 @@ function createNav() {
                     text: 'GITHUB',
                     link: 'https://github.com/dromara/dax-pay',
                 },
+                {
+                    text: 'GITCODE',
+                    link: 'https://gitcode.com/dromara/dax-pay',
+                },
             ],
         },
         {
             text: '演示',
             items: [
                 {
-                    text: '单商户管理端',
-                    link: 'https://daxpay.demo.bootx.cn/',
+                    text: '单商户',
+                    link: 'https://single.web.daxpaycn/',
                 },
             ],
         },

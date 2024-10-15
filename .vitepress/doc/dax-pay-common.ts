@@ -11,16 +11,8 @@ export const DaxPayCommon = {
                     link: '/common/protocol/单商户版',
                 },
                 {
-                    text: '多商户版',
-                    link: '/common/protocol/多商户版',
-                },
-                {
                     text: '商业版',
                     link: '/common/protocol/商业版',
-                },
-                {
-                    text: '企业版',
-                    link: '/common/protocol/企业版',
                 },
             ]
         },

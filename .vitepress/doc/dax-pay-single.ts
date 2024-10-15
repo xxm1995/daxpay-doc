@@ -276,16 +276,6 @@ export const DaxPaySingle = {
                 },
             ]
         },
-
-        {
-            text: '支付通道',
-            items: [
-                {
-                    text: '钱包管理',
-                    link: '/single/admin/channel/钱包管理',
-                },
-            ]
-        },
         {
             text: '数据记录',
             items: [
