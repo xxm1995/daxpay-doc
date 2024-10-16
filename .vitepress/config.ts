@@ -101,7 +101,7 @@ function createNav() {
             ]
         },
         {
-            text: "单商户",
+            text: "开源版",
             items: [
                 {
                     text: "快速指南",
@@ -142,12 +142,12 @@ function createNav() {
             text: "用户协议",
             items: [
                 {
-                    text: "单商户版",
-                    link: "/common/protocol/单商户版",
+                    text: "开源版",
+                    link: "/common/protocol/开源版",
                 },
                 {
                     text: "商业版",
-                    link: "/common/protocol/多商户版",
+                    link: "/common/protocol/商业版",
                 },
             ]
         },
@@ -172,7 +172,7 @@ function createNav() {
             text: '演示',
             items: [
                 {
-                    text: '单商户',
+                    text: '开源版',
                     link: 'https://single.web.daxpaycn/',
                 },
             ],

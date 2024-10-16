@@ -14,7 +14,7 @@ hero:
     width: 250
   actions:
     - theme: brand
-      text: 单商户
+      text: 开源版
       link: /single/guides/overview/项目介绍
     - theme: alt
       text: 商业版

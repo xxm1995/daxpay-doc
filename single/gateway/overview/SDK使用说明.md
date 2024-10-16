@@ -1,7 +1,7 @@
 # SDK使用说明
 
 ::: tip 提示
-SDK是基于Java开发的，除依赖`hutool`工具包外，不与任何第三方框架或工具强绑定，可以放心引入到项目中，
+SDK是基于Java8开发的，除依赖`hutool`工具包外，不与任何第三方框架或工具强绑定，可以放心引入到项目中，
 :::
 
 ## 引入SDK
@@ -19,14 +19,16 @@ SDK是基于Java开发的，除依赖`hutool`工具包外，不与任何第三�
 ```
 
 ## 初始化SDK
-> 在使用SDK时，需要先进行初始化SDK，初始化SDK时需要传入网关地址和网关密钥，网关地址为部署支付网关的地址，网关密钥为支付网关后台管理端的配置
+> 在使用SDK时，需要先进行初始化SDK，初始化SDK时需要传入网关地址、应用号和应用密钥等信息，网关地址为部署支付网关的地址，其他项需要与应用配置一致。
 
 ```java
     public void init() {
-        // 初始化支付配置
+       // 初始化支付配置
         DaxPayConfig config = DaxPayConfig.builder()
-                .serviceUrl("http://127.0.0.1:9000")
+                .serviceUrl("http://127.0.0.1:10880")
                 .signSecret("123456")
+                .signType(SignTypeEnum.HMAC_SHA256)
+                .appId("M8088873888246277")
                 .build();
         DaxPayKit.initConfig(config);
     }

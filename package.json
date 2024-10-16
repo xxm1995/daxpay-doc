@@ -16,13 +16,13 @@
     "gray-matter": "^4.0.3",
     "less": "^4.2.0",
     "lodash": "^4.17.21",
-    "sass": "^1.77.6",
-    "vite": "^5.3.3",
-    "vitepress": "^1.2.3",
+    "sass": "^1.79.5",
+    "vite": "^5.4.9",
+    "vitepress": "^1.4.1",
     "yorkie": "^2.0.0"
   },
   "dependencies": {
     "quick-svg": "^0.0.6",
-    "vue": "^3.3.4"
+    "vue": "^3.5.12"
   }
 }

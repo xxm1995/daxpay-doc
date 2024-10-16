@@ -7,8 +7,8 @@ export const DaxPayCommon = {
             text: "用户协议",
             items: [
                 {
-                    text: '单商户版',
-                    link: '/common/protocol/单商户版',
+                    text: '商业版',
+                    link: '/common/protocol/商业版',
                 },
                 {
                     text: '商业版',
@@ -28,6 +28,10 @@ export const DaxPayCommon = {
                 {
                     text: '版本差异',
                     link: '/common/guides/版本差异',
+                },
+                {
+                    text: '名词解释',
+                    link: '/common/guides/名词解释',
                 },
                 {
                     text: '常见问题',

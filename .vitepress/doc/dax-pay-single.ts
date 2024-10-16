@@ -19,10 +19,6 @@ export const DaxPaySingle = {
                     link: '/single/guides/overview/系统架构',
                 },
                 {
-                    text: '名词解释',
-                    link: '/single/guides/overview/名词解释',
-                },
-                {
                     text: '系统演示',
                     link: '/single/guides/overview/系统演示',
                 },
@@ -46,6 +42,10 @@ export const DaxPaySingle = {
                 {
                     text: '系统部署',
                     link: '/single/guides/develop/系统部署',
+                },
+                {
+                    text: 'Docker部署',
+                    link: '/single/guides/develop/docker部署',
                 },
             ]
         },
