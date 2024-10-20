@@ -94,28 +94,7 @@ export const DaxPaySingle = {
             ],
         },
         {
-            text: '消息通知',
-            items: [
-                {
-                    text: '支付订单通知',
-                    link: '/single/gateway/notice/支付订单通知',
-                },
-                {
-                    text: '退款订单通知',
-                    link: '/single/gateway/notice/退款订单通知',
-                },
-                {
-                    text: '分账订单通知',
-                    link: '/single/gateway/notice/分账订单通知',
-                },
-                {
-                    text: '转账订单通知',
-                    link: '/single/gateway/notice/转账订单通知',
-                },
-            ]
-        },
-        {
-            text: '接口清单(支付)',
+            text: '接口清单(交易)',
             items: [
                 {
                     text: '统一支付接口',
@@ -124,10 +103,6 @@ export const DaxPaySingle = {
                 {
                     text: '支付关闭接口',
                     link: '/single/gateway/payment/支付关闭接口',
-                },
-                {
-                    text: '支付撤销接口',
-                    link: '/single/gateway/payment/支付撤销接口',
                 },
                 {
                     text: '支付同步接口',
@@ -140,18 +115,6 @@ export const DaxPaySingle = {
                 {
                     text: '退款同步接口',
                     link: '/single/gateway/payment/退款同步接口',
-                },
-                {
-                    text: '统一分账接口',
-                    link: '/single/gateway/payment/统一分账接口',
-                },
-                {
-                    text: '分账完结接口',
-                    link: '/single/gateway/payment/分账完结接口',
-                },
-                {
-                    text: '分账同步接口',
-                    link: '/single/gateway/payment/分账同步接口',
                 },
                 {
                     text: '统一转账接口',
@@ -180,10 +143,6 @@ export const DaxPaySingle = {
                     link: '/single/gateway/query/查询转账订单',
                 },
                 {
-                    text: '查询分账订单',
-                    link: '/single/gateway/query/分账订单查询接口',
-                },
-                {
                     text: '分账接收方查询接口',
                     link: '/single/gateway/query/分账接收方查询接口',
                 },
@@ -191,23 +150,36 @@ export const DaxPaySingle = {
             ]
         },
         {
-            text: '接口清单(支撑性)',
+            text: '订阅消息通知',
             items: [
                 {
-                    text: '分账接收方添加接口',
-                    link: '/single/gateway/assist/分账接收方添加接口',
+                    text: '支付订单通知',
+                    link: '/single/gateway/notice/支付订单通知',
                 },
                 {
-                    text: '分账接收方删除接口',
-                    link: '/single/gateway/assist/分账接收方删除接口',
+                    text: '退款订单通知',
+                    link: '/single/gateway/notice/退款订单通知',
                 },
                 {
-                    text: '获取微信OAuth2授权链接',
-                    link: '/single/gateway/assist/获取微信OAuth2授权链接',
+                    text: '转账订单通知',
+                    link: '/single/gateway/notice/转账订单通知',
+                },
+            ]
+        },
+        {
+            text: '接口清单(认证)',
+            items: [
+                {
+                    text: '获取授权链接接口',
+                    link: '/single/gateway/assist/获取授权链接接口',
                 },
                 {
-                    text: '获取微信AccessToken',
-                    link: '/single/gateway/assist/获取微信AccessToken',
+                    text: '获取认证结果接口',
+                    link: '/single/gateway/assist/获取认证结果接口',
+                },
+                {
+                    text: '获取并设置认证结果接口',
+                    link: '/single/gateway/assist/获取并设置认证结果接口',
                 },
             ]
         },
