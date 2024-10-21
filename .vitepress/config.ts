@@ -32,6 +32,23 @@ export default defineConfig({
         search : {
             provider: "local",
         },
+        // 最后更新时间
+        lastUpdated:{
+            text: '更新于',
+            formatOptions: {
+                dateStyle: 'full',
+                timeStyle: 'medium'
+            }
+        },
+        // 目录大纲
+        outline:{
+            level: [2,3],
+            label: '本页目录'
+        },
+        docFooter: {
+            prev: '上一篇',
+            next: '下一篇'
+        },
         // 顶部导航栏
         nav: createNav(),
         // 目录导航

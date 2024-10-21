@@ -142,10 +142,6 @@ export const DaxPaySingle = {
                     text: '查询转账订单',
                     link: '/single/gateway/query/查询转账订单',
                 },
-                {
-                    text: '分账接收方查询接口',
-                    link: '/single/gateway/query/分账接收方查询接口',
-                },
 
             ]
         },
@@ -170,19 +166,36 @@ export const DaxPaySingle = {
             text: '接口清单(认证)',
             items: [
                 {
-                    text: '获取授权链接接口',
-                    link: '/single/gateway/assist/获取授权链接接口',
+                    text: '获取授权链接',
+                    link: '/single/gateway/assist/获取授权链接',
                 },
                 {
-                    text: '获取认证结果接口',
-                    link: '/single/gateway/assist/获取认证结果接口',
+                    text: '获取认证结果',
+                    link: '/single/gateway/assist/获取认证结果',
                 },
                 {
-                    text: '获取并设置认证结果接口',
-                    link: '/single/gateway/assist/获取并设置认证结果接口',
+                    text: '认证并设置结果',
+                    link: '/single/gateway/assist/认证并设置结果',
                 },
             ]
         },
+        {
+            text: '分账接口',
+            items: [
+                {
+                    text: '分账接收方查询接口',
+                    link: '/single/gateway/alloc/分账接收方查询接口',
+                },
+                {
+                    text: '获取认证结果接口',
+                    link: '/single/gateway/alloc/分账接收方添加接口',
+                },
+                {
+                    text: '获取并设置认证结果接口',
+                    link: '/single/gateway/alloc/分账接收方删除接口',
+                },
+            ]
+        }
     ],
     '/single/admin/': [
         {
