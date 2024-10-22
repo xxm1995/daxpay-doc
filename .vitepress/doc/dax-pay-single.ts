@@ -199,75 +199,62 @@ export const DaxPaySingle = {
     ],
     '/single/admin/': [
         {
-            text: '支付配置',
+            text: '系统配置',
             items: [
                 {
                     text: '平台配置',
                     link: '/single/admin/config/平台配置',
                 },
                 {
-                    text: '支付通道',
+                    text: '应用及相关配置',
                     link: '/single/admin/config/支付通道',
                 },
                 {
-                    text: '支付方式',
-                    link: '/single/admin/config/支付方式',
+                    text: '支付通道配置',
+                    link: '/single/admin/config/支付通道配置',
                 },
                 {
-                    text: '支付接口',
-                    link: '/single/admin/config/支付接口',
-                },
-                {
-                    text: '通道配置',
+                    text: '分账配置',
                     link: '/single/admin/config/通道配置',
                 },
             ]
         },
         {
-            text: '订单管理',
+            text: '交易相关信息',
             items: [
                 {
-                    text: '支付订单',
-                    link: '/single/admin/order/支付订单',
+                    text: '订单管理',
+                    link: '/single/admin/info/订单管理',
                 },
                 {
-                    text: '退款订单',
-                    link: '/single/admin/order/退款订单',
+                    text: '交易纪录',
+                    link: '/single/admin/info/交易纪录',
                 },
                 {
-                    text: '对账订单',
-                    link: '/single/admin/order/对账订单',
+                    text: '对账报告',
+                    link: '/single/admin/info/对账报告',
+                },
+                {
+                    text: '分账管理',
+                    link: '/single/admin/info/分账管理',
                 },
             ]
         },
         {
-            text: '数据记录',
+            text: '支付通道配置',
             items: [
                 {
-                    text: '回调记录',
-                    link: '/single/admin/record/回调记录',
+                    text: '微信支付',
+                    link: '/single/admin/channel/微信支付',
                 },
                 {
-                    text: '关闭记录',
-                    link: '/single/admin/record/关闭记录',
+                    text: '支付宝',
+                    link: '/single/admin/channel/支付宝',
                 },
                 {
-                    text: '修复记录',
-                    link: '/single/admin/record/修复记录',
+                    text: '云闪付',
+                    link: '/single/admin/channel/云闪付',
                 },
-                {
-                    text: '同步记录',
-                    link: '/single/admin/record/同步记录',
-                },
-            ]
-        },
-        {
-            text: '数据记录',
-            items: [
-                {
-                    text: '同步记录',
-                    link: '/single/admin/task/消息通知',
-                }
             ]
         },
     ]

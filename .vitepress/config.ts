@@ -190,7 +190,7 @@ function createNav() {
             items: [
                 {
                     text: '开源版',
-                    link: 'https://single.web.daxpaycn/',
+                    link: 'https://single.web.daxpay.cn/',
                 },
             ],
         },
