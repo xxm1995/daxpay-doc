@@ -206,16 +206,16 @@ export const DaxPaySingle = {
                     link: '/single/admin/config/平台配置',
                 },
                 {
-                    text: '应用及相关配置',
-                    link: '/single/admin/config/支付通道',
+                    text: '应用相关配置',
+                    link: '/single/admin/config/应用相关配置',
                 },
                 {
                     text: '支付通道配置',
-                    link: '/single/admin/config/支付通道配置',
+                    link: '/single/admin/config/支付通道',
                 },
                 {
                     text: '分账配置',
-                    link: '/single/admin/config/通道配置',
+                    link: '/single/admin/config/分账配置',
                 },
             ]
         },

@@ -49,16 +49,15 @@ SDK是基于Java8开发的，除依赖`hutool`工具包外，不与任何第三�
 
 ## 简单支付样例
 ```java
-package cn.daxpay.single.sdk.payment;
+package org.dromara.daxpay.test;
 
-import cn.daxpay.single.sdk.code.PayChannelEnum;
-import cn.daxpay.single.sdk.code.PayMethodEnum;
 import cn.daxpay.single.sdk.code.SignTypeEnum;
-import cn.daxpay.single.sdk.model.pay.PayModel;
+import cn.daxpay.single.sdk.model.trade.pay.PayOrderModel;
 import cn.daxpay.single.sdk.net.DaxPayConfig;
 import cn.daxpay.single.sdk.net.DaxPayKit;
-import cn.daxpay.single.sdk.param.pay.PayParam;
+import cn.daxpay.single.sdk.param.trade.pay.PayQueryParam;
 import cn.daxpay.single.sdk.response.DaxPayResult;
+import cn.daxpay.single.sdk.util.JsonUtil;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -73,40 +72,40 @@ public class PayOrderTest {
     public void init() {
         // 初始化支付配置
         DaxPayConfig config = DaxPayConfig.builder()
-                .serviceUrl("http://127.0.0.1:9000")
+                .serviceUrl("http://127.0.0.1:9999")
                 .signSecret("123456")
+                .appId("M7934041241299655")
                 .signType(SignTypeEnum.HMAC_SHA256)
                 .build();
         DaxPayKit.initConfig(config);
     }
 
-    /**
-     * 支付
+     /**
+     * 支付宝支付(二维码扫码)
      */
     @Test
-    public void pay() {
+    public void aliPayQrPay() {
         PayParam param = new PayParam();
         param.setClientIp("127.0.0.1");
-        param.setNotNotify(true);
-
         param.setBizOrderNo("SDK_"+ System.currentTimeMillis());
-        param.setTitle("测试接口支付");
-        param.setDescription("这是支付备注");
-        param.setAmount(100);
-        param.setChannel(PayChannelEnum.ALI.getCode());
+        param.setTitle("测试支付宝扫码支付");
+        param.setDescription("这是支付宝扫码支付");
+        param.setAmount(BigDecimal.valueOf(10));
+        param.setChannel(ChannelEnum.ALI.getCode());
         param.setMethod(PayMethodEnum.QRCODE.getCode());
         param.setAttach("{回调参数}");
         param.setAllocation(false);
-        param.setReturnUrl("https://abc.com/callback");
+        param.setReturnUrl("https://abc.com/returnurl");
+        param.setNotifyUrl("http://127.0.0.1:10880/test/callback/notify");
 
-        DaxPayResult<PayModel> execute = DaxPayKit.execute(param);
-        System.out.println(JSONUtil.toJsonStr(execute));
+        DaxPayResult<PayResultModel> execute = DaxPayKit.execute(param);
+        System.out.println(JsonUtil.toJsonStr(execute));
     }
 }
 ```
 
 ## 扩展支持新的接口
-如果对支付网关进行二次开发后，新增了新的接口，如果要想继续使用SDK进行调用，可以通过继承`DaxPayRequest`和`DaxPayResponseModel`来使`SDK`支持新的接口。
+如果对支付网关进行二次开发后，新增了新的接口，如果要想继续使用SDK进行调用，可以通过继承`DaxPayRequest`来使`SDK`支持新的接口。
 **注意：请尽量不要出现参数嵌套的的情况，虽然理论上通过在嵌套的对象类型实现`SortMapParam`接口就可以参与排序签名，但目前未进行完善的测试，
 可能会导致签名失败的问题，如果使用了嵌套的参数的话，请自行进行测试来保证正确性。**
 
@@ -129,7 +128,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class DivideOrderModel extends DaxPayResponseModel {
+public class DivideOrderModel  {
 
     /** 分账状态 */
     private String status;
