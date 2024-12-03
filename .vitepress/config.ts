@@ -112,6 +112,10 @@ function createNav() {
                     link: "/common/guides/版本差异",
                 },
                 {
+                    text: "名词解释",
+                    link: "/common/guides/名词解释",
+                },
+                {
                     text: "FAQ",
                     link: "/common/guides/常见问题",
                 },
