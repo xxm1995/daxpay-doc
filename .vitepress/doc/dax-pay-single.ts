@@ -44,8 +44,8 @@ export const DaxPaySingle = {
                     link: '/single/guides/develop/系统部署',
                 },
                 {
-                    text: 'Docker部署',
-                    link: '/single/guides/develop/docker部署',
+                    text: 'Docker一键部署',
+                    link: '/single/guides/develop/Docker一键部署',
                 },
             ]
         },
@@ -101,6 +101,10 @@ export const DaxPaySingle = {
                     link: '/single/gateway/payment/统一支付接口',
                 },
                 {
+                    text: '收银台下单接口',
+                    link: '/single/gateway/payment/收银台下单接口',
+                },
+                {
                     text: '支付关闭接口',
                     link: '/single/gateway/payment/支付关闭接口',
                 },
@@ -142,6 +146,10 @@ export const DaxPaySingle = {
                     text: '查询转账订单',
                     link: '/single/gateway/query/查询转账订单',
                 },
+                {
+                    text: '查询分账订单',
+                    link: '/single/gateway/query/查询分账订单',
+                },
 
             ]
         },
@@ -159,6 +167,10 @@ export const DaxPaySingle = {
                 {
                     text: '转账订单通知',
                     link: '/single/gateway/notice/转账订单通知',
+                },
+                {
+                    text: '分账信息通知',
+                    link: '/single/gateway/notice/分账信息通知',
                 },
             ]
         },
@@ -183,17 +195,30 @@ export const DaxPaySingle = {
             text: '分账接口',
             items: [
                 {
+                    text: '分账发起接口',
+                    link: '/single/gateway/alloc/分账发起接口',
+                },
+                {
+                    text: '分账完结接口',
+                    link: '/single/gateway/alloc/分账完结接口',
+                },
+                {
+                    text: '分账同步接口',
+                    link: '/single/gateway/alloc/分账同步接口 ',
+                },
+                {
                     text: '分账接收方查询接口',
                     link: '/single/gateway/alloc/分账接收方查询接口',
                 },
                 {
-                    text: '获取认证结果接口',
+                    text: '分账接收方添加接口',
                     link: '/single/gateway/alloc/分账接收方添加接口',
                 },
                 {
-                    text: '获取并设置认证结果接口',
+                    text: '分账接收方删除接口',
                     link: '/single/gateway/alloc/分账接收方删除接口',
                 },
+
             ]
         }
     ],
