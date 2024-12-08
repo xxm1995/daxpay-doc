@@ -4,7 +4,7 @@ Docker方式用于快速体验本项目, 默认使用MySQL数据库. 各方面�
 :::
 
 ## Docker-Compose部署
-> 需要自己准备MySQL数据库和Redis，然后在`docker-compose.yml`编排文件中`environment`进行填写
+> 需要自己准备`MySQL`数据库和`Redis`，将数据脚本进行导入，注意数据库开启忽略大小写。然后在`docker-compose.yml`编排文件中`environment`进行填写。
 ### 部署前准备
 > 需要在机器上提前安装好`docker`和`docker-compose`, 然后准备好MySQL和Redis实例. 
 > 然后复制下面的内容粘贴到文本编辑器中, 保存为`docker-compose.yml`文件, 将文件上传到机器中.

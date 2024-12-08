@@ -32,14 +32,6 @@ export const DaxPaySingle = {
                     link: '/single/guides/develop/项目启动',
                 },
                 {
-                    text: '配置说明',
-                    link: '/single/guides/develop/配置说明',
-                },
-                {
-                    text: '数据库说明',
-                    link: '/single/guides/develop/数据库说明',
-                },
-                {
                     text: '系统部署',
                     link: '/single/guides/develop/系统部署',
                 },
@@ -154,44 +146,6 @@ export const DaxPaySingle = {
             ]
         },
         {
-            text: '订阅消息通知',
-            items: [
-                {
-                    text: '支付订单通知',
-                    link: '/single/gateway/notice/支付订单通知',
-                },
-                {
-                    text: '退款订单通知',
-                    link: '/single/gateway/notice/退款订单通知',
-                },
-                {
-                    text: '转账订单通知',
-                    link: '/single/gateway/notice/转账订单通知',
-                },
-                {
-                    text: '分账信息通知',
-                    link: '/single/gateway/notice/分账信息通知',
-                },
-            ]
-        },
-        {
-            text: '接口清单(认证)',
-            items: [
-                {
-                    text: '获取授权链接',
-                    link: '/single/gateway/assist/获取授权链接',
-                },
-                {
-                    text: '获取认证结果',
-                    link: '/single/gateway/assist/获取认证结果',
-                },
-                {
-                    text: '认证并设置结果',
-                    link: '/single/gateway/assist/认证并设置结果',
-                },
-            ]
-        },
-        {
             text: '分账接口',
             items: [
                 {
@@ -220,23 +174,91 @@ export const DaxPaySingle = {
                 },
 
             ]
-        }
+        },
+        {
+            text: '订阅消息通知',
+            items: [
+                {
+                    text: '支付订单通知',
+                    link: '/single/gateway/notice/支付订单通知',
+                },
+                {
+                    text: '退款订单通知',
+                    link: '/single/gateway/notice/退款订单通知',
+                },
+                {
+                    text: '转账订单通知',
+                    link: '/single/gateway/notice/转账订单通知',
+                },
+                {
+                    text: '分账信息通知',
+                    link: '/single/gateway/notice/分账信息通知',
+                },
+            ]
+        },
+        {
+            text: '回调消息通知',
+            items: [
+                {
+                    text: '支付订单回调',
+                    link: '/single/gateway/callback/支付订单回调',
+                },
+                {
+                    text: '退款订单回调',
+                    link: '/single/gateway/callback/退款订单回调',
+                },
+                {
+                    text: '转账订单回调',
+                    link: '/single/gateway/callback/转账订单回调',
+                },
+                {
+                    text: '分账信息回调',
+                    link: '/single/gateway/callback/分账信息回调',
+                },
+            ]
+        },
+        {
+            text: '接口清单(认证)',
+            items: [
+                {
+                    text: '获取授权链接',
+                    link: '/single/gateway/assist/获取授权链接',
+                },
+                {
+                    text: '获取认证结果',
+                    link: '/single/gateway/assist/获取认证结果',
+                },
+                {
+                    text: '认证并设置结果',
+                    link: '/single/gateway/assist/认证并设置结果',
+                },
+            ]
+        },
     ],
     '/single/admin/': [
         {
             text: '系统配置',
             items: [
+
                 {
                     text: '平台配置',
                     link: '/single/admin/config/平台配置',
                 },
                 {
-                    text: '应用相关配置',
-                    link: '/single/admin/config/应用相关配置',
+                    text: '商户应用配置',
+                    link: '/single/admin/config/商户应用配置',
                 },
                 {
                     text: '支付通道配置',
-                    link: '/single/admin/config/支付通道',
+                    link: '/single/admin/config/支付通道配置',
+                },
+                {
+                    text: '收银台配置',
+                    link: '/single/admin/config/收银台配置',
+                },
+                {
+                    text: '收银码牌配置',
+                    link: '/single/admin/config/收银码牌配置',
                 },
                 {
                     text: '分账配置',
@@ -245,40 +267,69 @@ export const DaxPaySingle = {
             ]
         },
         {
-            text: '交易相关信息',
+            text: '交易相关',
             items: [
                 {
-                    text: '订单管理',
-                    link: '/single/admin/info/订单管理',
+                    text: '支付订单',
+                    link: '/single/admin/trade/支付订单',
                 },
                 {
-                    text: '交易纪录',
-                    link: '/single/admin/info/交易纪录',
+                    text: '退款订单',
+                    link: '/single/admin/trade/退款订单',
+                },
+                {
+                    text: '转账订单',
+                    link: '/single/admin/trade/转账订单',
+                },
+                {
+                    text: '分账单',
+                    link: '/single/admin/trade/分账单',
                 },
                 {
                     text: '对账报告',
-                    link: '/single/admin/info/对账报告',
+                    link: '/single/admin/trade/对账报告',
                 },
                 {
-                    text: '分账管理',
-                    link: '/single/admin/info/分账管理',
+                    text: '交易记录信息',
+                    link: '/single/admin/trade/交易记录信息',
                 },
             ]
         },
         {
-            text: '支付通道配置',
+            text: '其他',
             items: [
                 {
-                    text: '微信支付',
-                    link: '/single/admin/channel/微信支付',
+                    text: '消息通知',
+                    link: '/single/admin/other/消息通知',
                 },
                 {
-                    text: '支付宝',
-                    link: '/single/admin/channel/支付宝',
+                    text: '交易和认证调试',
+                    link: '/single/admin/other/交易和认证调试',
+                },
+            ]
+        },
+        {
+            text: '脚手架文档',
+            items: [
+                {
+                    text: '菜单管理',
+                    link: '/single/admin/bootx/菜单管理',
                 },
                 {
-                    text: '云闪付',
-                    link: '/single/admin/channel/云闪付',
+                    text: '权限管理',
+                    link: '/single/admin/bootx/权限管理',
+                },
+                {
+                    text: '用户管理',
+                    link: '/single/admin/bootx/用户管理',
+                },
+                {
+                    text: '系统配置',
+                    link: '/single/admin/bootx/系统配置',
+                },
+                {
+                    text: '文件存储',
+                    link: '/single/admin/bootx/文件存储',
                 },
             ]
         },

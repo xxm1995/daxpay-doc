@@ -36,14 +36,14 @@ export default defineConfig({
         lastUpdated:{
             text: '更新于',
             formatOptions: {
-                dateStyle: 'full',
+                dateStyle: 'medium',
                 timeStyle: 'medium'
             }
         },
         // 目录大纲
         outline:{
             level: [2,3],
-            label: '本页目录'
+            label: '目录大纲'
         },
         docFooter: {
             prev: '上一篇',
@@ -145,18 +145,18 @@ function createNav() {
                     text: "快速指南",
                     link: "/multi/guides/overview/项目介绍",
                 },
-                {
-                    text: "接口对接",
-                    link: "/multi/gateway/overview/接口清单",
-                },
-                {
-                    text: "运营端",
-                    link: "/multi/admin/config/运营端",
-                },
-                {
-                    text: "商户端",
-                    link: "/multi/merchant/config/商户端",
-                },
+                // {
+                //     text: "接口对接",
+                //     link: "/multi/gateway/overview/接口清单",
+                // },
+                // {
+                //     text: "运营端",
+                //     link: "/multi/admin/config/运营端",
+                // },
+                // {
+                //     text: "商户端",
+                //     link: "/multi/merchant/config/商户端",
+                // },
             ]
         },
         {

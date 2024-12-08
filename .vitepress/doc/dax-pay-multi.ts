@@ -36,10 +36,6 @@ export const DaxPayMulti = {
                     link: '/multi/guides/develop/配置说明',
                 },
                 {
-                    text: '数据库说明',
-                    link: '/multi/guides/develop/数据库说明',
-                },
-                {
                     text: '系统部署',
                     link: '/multi/guides/develop/系统部署',
                 },
