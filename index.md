@@ -18,7 +18,7 @@ hero:
       link: /single/guides/overview/项目介绍
     - theme: alt
       text: 商业版
-      link: /overview/guide/项目介绍
+      link: multi/guides/overview/项目介绍
 features:
   - icon: 💡
     title: 主流技术栈

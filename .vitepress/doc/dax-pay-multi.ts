@@ -49,10 +49,6 @@ export const DaxPayMulti = {
                     link: '/multi/guides/other/常见问题',
                 },
                 {
-                    text: '常量和状态表',
-                    link: '/multi/guides/other/常量和状态表',
-                },
-                {
                     text: '更新记录',
                     link: '/multi/guides/other/更新记录',
                 },
