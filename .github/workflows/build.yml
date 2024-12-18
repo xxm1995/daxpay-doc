@@ -13,22 +13,28 @@ jobs:
       # 1. 拉取代码
       - name: Checkout Code
         uses: actions/checkout@v3
+      # 下载pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          run_install: true
+          version: 9
 
       # 2. 设置 Node.js 环境（使用最新版）
       - name: Setup Node.js Latest
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'  # 使用最新 LTS 版本（Long Term Support）
-          cache: 'npm'           # 缓存 npm 依赖，加速构建
+          cache: 'pnpm'           # 缓存 npm 依赖，加速构建
 
       # 3. 安装依赖
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
 
       # 4. 构建项目
       - name: Build VitePress
         # 【⚠️注意】部分项目的可能是 yarn build
-        run: npm build
+        run: pnpm build
 
       # 5. 构建结果 推送到 dist 分支
       - name: Deploy
