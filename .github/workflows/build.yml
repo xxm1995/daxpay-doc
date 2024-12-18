@@ -23,12 +23,12 @@ jobs:
 
       # 3. 安装依赖
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
 
       # 4. 构建项目
       - name: Build VitePress
         # 【⚠️注意】部分项目的可能是 yarn build
-        run: yarn build
+        run: npm build
 
       # 5. 构建结果 推送到 dist 分支
       - name: Deploy
