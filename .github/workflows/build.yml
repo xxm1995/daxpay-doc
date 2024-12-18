@@ -47,4 +47,4 @@ jobs:
           # 【重要】这是将构建产物push到新的分支的名称，后面步骤要用到
           publish_branch: dist
           # 【⚠️注意】这里是构建完成后的dist目录，已vitepress框架为例
-          publish_dir: ./dist
+          publish_dir: src/./dist
