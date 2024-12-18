@@ -1,44 +1,40 @@
 name: Build Project
-
 on:
   push:
     branches:
       - master  # 当 push 到 master 分支时触发
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       # 1. 拉取代码
       - name: Checkout Code
         uses: actions/checkout@v3
-      # 下载pnpm
+      # 2 安装 pnpm
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
           run_install: true
           version: 9
-
-      # 2. 设置 Node.js 环境（使用最新版）
+      # 3. 设置 Node.js 环境（使用最新版）
       - name: Setup Node.js Latest
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'  # 使用最新 LTS 版本（Long Term Support）
           cache: 'pnpm'           # 缓存 npm 依赖，加速构建
 
-      # 3. 安装依赖
+      # 44. 安装依赖
       - name: Install Dependencies
         run: pnpm install
 
-      # 4. 构建项目
+      # 5. 使用pnpm构建项目
       - name: Build VitePress
-        # 【⚠️注意】部分项目的可能是 yarn build
         run: pnpm build
 
-      # 5. 构建结果 推送到 dist 分支
+      # 6. 构建结果 推送到 dist 分支
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
+        # 判断master分支是否存在
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
