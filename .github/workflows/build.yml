@@ -38,13 +38,10 @@ jobs:
 
       # 5. 构建结果 推送到 dist 分支
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
           # 【重要】这是将构建产物push到新的分支的名称，后面步骤要用到
           publish_branch: dist
           # 【⚠️注意】这里是构建完成后的dist目录，已vitepress框架为例
-          publish_dir: src/./dist
+          publish_dir: ./dist
