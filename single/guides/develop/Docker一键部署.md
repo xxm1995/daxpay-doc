@@ -18,7 +18,8 @@ Docker方式用于快速体验本项目, 默认使用MySQL数据库. 各方面�
 version: '3'
 services:
   daxpay-single:
-    image: registry.cn-beijing.aliyuncs.com/daxpay/daxpay-single:3.0.0.beta2
+    # 使用时可以限定具体的版本, 如果因为网络问题无法下载, 可以使用阿里云加速地址: registry.cn-beijing.aliyuncs.com/daxpay/daxpay-single:latest
+    image: daxpay/daxpay-single:latest
     restart: always
     # window上不支持host网络模式, 需要更改为 bridge 网络模式, 然后走端口映射
     network_mode: host
@@ -51,7 +52,7 @@ services:
       - KNIFE4J_PRODUCTION=false
       # 是否启用超级管理员登录, 正式环境不要开启
       - DAXPAY_ENABLE_ADMIN=true
-      # 用户管理列表中是否显示超级管理员
+      # 用户管理列表中是否显示超级管理员, 正式环境不要开启
       - DAXPAY_ADMIN-IN-LIST=true
 
 ```
