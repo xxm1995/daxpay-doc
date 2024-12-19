@@ -8,11 +8,11 @@ SDK是基于Java8开发的，除依赖`hutool`工具包外，不与任何第三�
 
 在项目中引入sdk依赖，SDK与网关项目版本号保持一致，如网关项目为3.0.0，sdk版本为3.0.0，跨版本可能会产生兼容性问题。
 
-最近版本见 [maven中央仓库](https://mvnrepository.com/artifact/cn.daxpay.single/daxpay-single-sdk)
+最近版本见 [maven中央仓库](https://mvnrepository.com/artifact/org.dromara.daxpay/daxpay-single-sdk)
 
 ```xml
   <dependency>
-    <groupId>cn.daxpay.single</groupId>
+    <groupId>org.dromara.daxpay</groupId>
     <artifactId>daxpay-single-sdk</artifactId>
     <version>${latest.version}</version>
   </dependency>
@@ -51,13 +51,13 @@ SDK是基于Java8开发的，除依赖`hutool`工具包外，不与任何第三�
 ```java
 package org.dromara.daxpay.test;
 
-import cn.daxpay.single.sdk.code.SignTypeEnum;
-import cn.daxpay.single.sdk.model.trade.pay.PayOrderModel;
-import cn.daxpay.single.sdk.net.DaxPayConfig;
-import cn.daxpay.single.sdk.net.DaxPayKit;
-import cn.daxpay.single.sdk.param.trade.pay.PayQueryParam;
-import cn.daxpay.single.sdk.response.DaxPayResult;
-import cn.daxpay.single.sdk.util.JsonUtil;
+import org.dromara.daxpay.single.sdk.code.SignTypeEnum;
+import org.dromara.daxpay.single.sdk.model.trade.pay.PayOrderModel;
+import org.dromara.daxpay.single.sdk.net.DaxPayConfig;
+import org.dromara.daxpay.single.sdk.net.DaxPayKit;
+import org.dromara.daxpay.single.sdk.param.trade.pay.PayQueryParam;
+import org.dromara.daxpay.single.sdk.response.DaxPayResult;
+import org.dromara.daxpay.single.sdk.util.JsonUtil;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -113,9 +113,9 @@ public class PayOrderTest {
 > 新建一个继承`DaxPayResponseModel`抽象类的响应类，如下面`DivideOrderResponse`的例子
 
 ```java
-package cn.daxpay.single.sdk.model.divide;
+package org.dromara.daxpay.single.sdk.model.divide;
 
-import cn.daxpay.single.sdk.net.DaxPayResponseModel;
+import org.dromara.daxpay.single.sdk.net.DaxPayResponseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -140,11 +140,11 @@ public class DivideOrderModel  {
 >  新建一个继承`DaxPayRequest<T>`抽象类的响应类，并实现其中的接口，如下面`DivideOrderParam`的例子
 
 ```java
-package cn.daxpay.single.sdk.param;
+package org.dromara.daxpay.single.sdk.param;
 
-import cn.daxpay.single.sdk.model.divide.DivideOrderModel;
-import cn.daxpay.single.sdk.net.DaxPayRequest;
-import cn.daxpay.single.sdk.response.DaxPayResult;
+import org.dromara.daxpay.single.sdk.model.divide.DivideOrderModel;
+import org.dromara.daxpay.single.sdk.net.DaxPayRequest;
+import org.dromara.daxpay.single.sdk.response.DaxPayResult;
 import cn.hutool.core.lang.TypeReference;
 import cn.hutool.json.JSONUtil;
 import lombok.Getter;
