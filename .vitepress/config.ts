@@ -107,10 +107,10 @@ function createNav() {
                     text: "项目介绍",
                     link: "/common/guides/项目介绍",
                 },
-                {
-                    text: "版本差异",
-                    link: "/common/guides/版本差异",
-                },
+                // {
+                //     text: "版本差异",
+                //     link: "/common/guides/版本差异",
+                // },
                 {
                     text: "名词解释",
                     link: "/common/guides/名词解释",
@@ -138,13 +138,13 @@ function createNav() {
                 },
             ]
         },
-        {
-            text: "商业版",
-            items: [
-                {
-                    text: "快速指南",
-                    link: "/multi/guides/overview/项目介绍",
-                },
+        // {
+        //     text: "商业版",
+        //     items: [
+        //         {
+        //             text: "快速指南",
+        //             link: "/multi/guides/overview/项目介绍",
+        //         },
                 // {
                 //     text: "接口对接",
                 //     link: "/multi/gateway/overview/接口清单",
@@ -157,8 +157,8 @@ function createNav() {
                 //     text: "商户端",
                 //     link: "/multi/merchant/config/商户端",
                 // },
-            ]
-        },
+            // ]
+        // },
         {
             text: "用户协议",
             items: [
@@ -166,10 +166,10 @@ function createNav() {
                     text: "开源版",
                     link: "/common/protocol/开源版",
                 },
-                {
-                    text: "商业版",
-                    link: "/common/protocol/商业版",
-                },
+                // {
+                //     text: "商业版",
+                //     link: "/common/protocol/商业版",
+                // },
             ]
         },
         {
