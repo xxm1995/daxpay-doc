@@ -107,10 +107,10 @@ function createNav() {
                     text: "项目介绍",
                     link: "/common/guides/项目介绍",
                 },
-                // {
-                //     text: "版本差异",
-                //     link: "/common/guides/版本差异",
-                // },
+                {
+                    text: "版本差异",
+                    link: "/common/guides/版本差异",
+                },
                 {
                     text: "名词解释",
                     link: "/common/guides/名词解释",
@@ -136,29 +136,33 @@ function createNav() {
                     text: "操作手册",
                     link: "/single/admin/config/平台配置",
                 },
+                {
+                    text: "付费扩展包",
+                    link: "/single/guides/expansion/付费扩展包",
+                },
             ]
         },
-        // {
-        //     text: "商业版",
-        //     items: [
-        //         {
-        //             text: "快速指南",
-        //             link: "/multi/guides/overview/项目介绍",
-        //         },
-                // {
-                //     text: "接口对接",
-                //     link: "/multi/gateway/overview/接口清单",
-                // },
-                // {
-                //     text: "运营端",
-                //     link: "/multi/admin/config/运营端",
-                // },
-                // {
-                //     text: "商户端",
-                //     link: "/multi/merchant/config/商户端",
-                // },
-            // ]
-        // },
+        {
+            text: "商业版",
+            items: [
+                {
+                    text: "快速指南",
+                    link: "/multi/guides/overview/项目介绍",
+                },
+                {
+                    text: "接口对接",
+                    link: "/multi/gateway/overview/接口清单",
+                },
+                {
+                    text: "运营端",
+                    link: "/multi/admin/config/运营端",
+                },
+                {
+                    text: "商户端",
+                    link: "/multi/merchant/config/商户端",
+                },
+            ]
+        },
         {
             text: "用户协议",
             items: [

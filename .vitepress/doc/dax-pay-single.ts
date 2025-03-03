@@ -56,8 +56,18 @@ export const DaxPaySingle = {
                     text: '更新记录',
                     link: '/single/guides/other/更新记录',
                 },
-            ]
+            ],
         },
+        {
+            text: '扩展包',
+            items: [
+
+                {
+                    text: '收费扩展包',
+                    link: '/single/guides/expansion/付费扩展包',
+                },
+            ],
+        }
     ],
     '/single/gateway/': [
         {
@@ -333,6 +343,6 @@ export const DaxPaySingle = {
                 },
             ]
         },
-    ]
 
+    ],
 }
