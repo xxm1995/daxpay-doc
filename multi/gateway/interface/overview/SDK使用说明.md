@@ -1,7 +1,7 @@
 # SDK使用说明
 
 ::: tip 提示
-SDK是基于Java8开发的，除依赖`hutool`工具包外，不与任何第三方框架或工具强绑定，可以放心引入到项目中，
+SDK是基于Java8开发的，除依赖`hutool`工具包外，不与任何第三方框架或工具强绑定，可以放心引入到项目中。
 :::
 
 ## 引入SDK
@@ -40,24 +40,25 @@ SDK是基于Java8开发的，除依赖`hutool`工具包外，不与任何第三�
 `DaxPayKit`是SDK的核心类，通过调用核心类的接口，可以实现各种功能。`DaxPayKit`对外提供`execute`方法， 默认启用请求时签名功能，可以手动进行关闭。
 会根据传入的参数不同返回不同的响应，使用不同的接口时都是调用这个方法，传入对应的业务请求参数。
 
-
-**核心源码**
-
 ### PaySignUtil
 `PaySignUtil`是SDK的签名工具类，提供对请求参数的签名功能，如 `MD5`、`HmacSHA256`和`SM3` 三种种，具体方法可以查看源码。
 
 
 ## 简单支付样例
 ```java
-package org.dromara.daxpay.test;
+package cn.daxpay.multi.sdk.trade;
 
-import org.dromara.daxpay.single.sdk.code.SignTypeEnum;
-import org.dromara.daxpay.single.sdk.model.trade.pay.PayOrderModel;
-import org.dromara.daxpay.single.sdk.net.DaxPayConfig;
-import org.dromara.daxpay.single.sdk.net.DaxPayKit;
-import org.dromara.daxpay.single.sdk.param.trade.pay.PayQueryParam;
-import org.dromara.daxpay.single.sdk.response.DaxPayResult;
-import org.dromara.daxpay.single.sdk.util.JsonUtil;
+import cn.daxpay.multi.sdk.code.ChannelEnum;
+import cn.daxpay.multi.sdk.code.PayMethodEnum;
+import cn.daxpay.multi.sdk.code.SignTypeEnum;
+import cn.daxpay.multi.sdk.net.DaxPayConfig;
+import cn.daxpay.multi.sdk.net.DaxPayKit;
+import cn.daxpay.multi.sdk.param.channel.AlipayParam;
+import cn.daxpay.multi.sdk.param.channel.WechatPayParam;
+import cn.daxpay.multi.sdk.param.trade.pay.PayParam;
+import cn.daxpay.multi.sdk.response.DaxPayResult;
+import cn.daxpay.multi.sdk.result.trade.pay.PayResult;
+import cn.daxpay.multi.sdk.util.JsonUtil;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -72,33 +73,36 @@ public class PayOrderTest {
     public void init() {
         // 初始化支付配置
         DaxPayConfig config = DaxPayConfig.builder()
-                .serviceUrl("http://127.0.0.1:9999")
+                .serviceUrl("http://127.0.0.1:19999")
                 .signSecret("123456")
-                .appId("M7934041241299655")
-                .signType(SignTypeEnum.HMAC_SHA256)
+                .mchNo("M1723635576766")
+                .appId("A7934041241299655")
+                .signType(SignTypeEnum.MD5)
                 .build();
         DaxPayKit.initConfig(config);
     }
 
      /**
-     * 支付宝支付(二维码扫码)
+     * 微信支付(二维码扫码)
      */
     @Test
-    public void aliPayQrPay() {
+    public void wxQrPay() {
         PayParam param = new PayParam();
         param.setClientIp("127.0.0.1");
         param.setBizOrderNo("SDK_"+ System.currentTimeMillis());
-        param.setTitle("测试支付宝扫码支付");
-        param.setDescription("这是支付宝扫码支付");
-        param.setAmount(BigDecimal.valueOf(10));
-        param.setChannel(ChannelEnum.ALI.getCode());
+        param.setTitle("测试微信扫码支付");
+        param.setDescription("这是支付备注");
+        param.setAmount(BigDecimal.valueOf(0.01));
+        param.setChannel(ChannelEnum.WECHAT.getCode());
         param.setMethod(PayMethodEnum.QRCODE.getCode());
         param.setAttach("{回调参数}");
         param.setAllocation(false);
         param.setReturnUrl("https://abc.com/returnurl");
         param.setNotifyUrl("http://127.0.0.1:10880/test/callback/notify");
 
-        DaxPayResult<PayResultModel> execute = DaxPayKit.execute(param);
+        DaxPayResult<PayResult> execute = DaxPayKit.execute(param);
+        // 验签
+        System.out.println("验签结果: " + DaxPayKit.verifySign(execute));
         System.out.println(JsonUtil.toJsonStr(execute));
     }
 }
