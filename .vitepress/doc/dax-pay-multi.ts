@@ -93,6 +93,10 @@ export const DaxPayMulti = {
                     link: '/multi/gateway/interface/payment/统一支付接口',
                 },
                 {
+                    text: '统一支付接口(通道说明)',
+                    link: '/multi/gateway/interface/payment/统一支付接口(通道说明)',
+                },
+                {
                     text: '网关支付接口',
                     link: '/multi/gateway/interface/payment/网关支付接口',
                 },
