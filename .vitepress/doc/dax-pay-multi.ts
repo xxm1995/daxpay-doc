@@ -80,8 +80,8 @@ export const DaxPayMulti = {
                     link: '/multi/gateway/interface/overview/SDK使用说明',
                 },
                 {
-                    text: '状态码',
-                    link: '/multi/gateway/interface/overview/返回状态码',
+                    text: '常量和状态表',
+                    link: '/multi/gateway/interface/overview/常量和状态表',
                 }
             ],
         },
