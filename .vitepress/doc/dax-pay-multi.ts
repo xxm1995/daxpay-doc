@@ -93,15 +93,11 @@ export const DaxPayMulti = {
                     link: '/multi/gateway/interface/payment/统一支付接口',
                 },
                 {
-                    text: '统一支付接口(通道说明)',
+                    text: '通道说明(统一支付)',
                     link: '/multi/gateway/interface/payment/统一支付接口(通道说明)',
                 },
                 {
-                    text: '网关支付接口',
-                    link: '/multi/gateway/interface/payment/网关支付接口',
-                },
-                {
-                    text: '支付关闭和撤销接口',
+                    text: '支付关闭和撤销',
                     link: '/multi/gateway/interface/payment/支付关闭和撤销接口',
                 },
                 {
@@ -112,6 +108,16 @@ export const DaxPayMulti = {
                     text: '统一转账接口',
                     link: '/multi/gateway/interface/payment/统一转账接口',
                 },
+
+                {
+                    text: '网关支付接口',
+                    link: '/multi/gateway/interface/payment/网关支付接口',
+                },
+
+                {
+                    text: '付款码聚合支付',
+                    link: '/multi/gateway/interface/payment/付款码聚合接口',
+                },
             ]
         },
         {
@@ -119,23 +125,34 @@ export const DaxPayMulti = {
             items: [
                 {
                     text: '查询支付订单',
-                    link: '/single/gateway/query/查询支付订单',
+                    link: '/multi/gateway/interface/query/查询支付订单',
                 },
                 {
                     text: '查询退款订单',
-                    link: '/single/gateway/query/查询退款订单',
+                    link: '/multi/gateway/interface/query/查询退款订单',
                 },
                 {
                     text: '查询转账订单',
-                    link: '/single/gateway/query/查询转账订单',
+                    link: '/multi/gateway/interface/query/查询转账订单',
+                },
+            ]
+        },
+        {
+            text: '消息通知',
+            items: [
+                {
+                    text: '支付变动通知',
+                    link: '/multi/gateway/interface/notice/支付订单通知',
                 },
                 {
-                    text: '查询分账订单',
-                    link: '/single/gateway/query/查询分账订单',
+                    text: '退款变动通知',
+                    link: '/multi/gateway/interface/notice/退款订单通知',
                 },
-
+                {
+                    text: '转账变动通知',
+                    link: '/multi/gateway/interface/notice/转账订单通知',
+                },
             ]
         },
     ],
-    '/multi/gateway/interface/notice': []
 }

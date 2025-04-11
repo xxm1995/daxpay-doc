@@ -149,10 +149,6 @@ function createNav() {
                     text: "接口对接",
                     link: "/multi/gateway/interface/overview/接口清单",
                 },
-                {
-                    text: "消息通知",
-                    link: "/multi/gateway/notice/overview/消息清单",
-                },
                 // {
                 //     text: "运营端",
                 //     link: "/multi/admin/config/运营端",
