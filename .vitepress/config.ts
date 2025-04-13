@@ -4,14 +4,14 @@ import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 // @ts-check
 import {HeadConfig} from "vitepress/types/shared";
 
-import {DaxPaySingle} from "./doc/dax-pay-single";
-import {DaxPayMulti} from "./doc/dax-pay-multi";
+import {DaxPayopen} from "./doc/dax-pay-open";
+import {DaxPayplus} from "./doc/dax-pay-plus";
 import {DaxPayCommon} from "./doc/dax-pay-common";
 
 const ogDescription =
     '开源、便捷、全面、安全、功能完整。'
 const ogImage = '/logo.png'
-const ogTitle = 'single'
+const ogTitle = 'open'
 const ogUrl = '/'
 
 export default defineConfig({
@@ -126,15 +126,15 @@ function createNav() {
             items: [
                 {
                     text: "快速指南",
-                    link: "/single/guides/overview/项目介绍",
+                    link: "/open/guides/overview/项目介绍",
                 },
                 {
                     text: "接口对接",
-                    link: "/single/gateway/overview/接口清单",
+                    link: "/open/gateway/overview/接口清单",
                 },
                 {
                     text: "操作手册",
-                    link: "/single/admin/config/平台配置",
+                    link: "/open/admin/config/平台配置",
                 },
             ]
         },
@@ -143,19 +143,19 @@ function createNav() {
             items: [
                 {
                     text: "快速指南",
-                    link: "/multi/guides/overview/项目介绍",
+                    link: "/plus/guides/overview/项目介绍",
                 },
                 {
                     text: "接口对接",
-                    link: "/multi/gateway/interface/overview/接口清单",
+                    link: "/plus/gateway/interface/overview/接口清单",
                 },
                 // {
                 //     text: "运营端",
-                //     link: "/multi/admin/config/运营端",
+                //     link: "/plus/admin/config/运营端",
                 // },
                 // {
                 //     text: "商户端",
-                //     link: "/multi/merchant/config/商户端",
+                //     link: "/plus/merchant/config/商户端",
                 // },
             ]
         },
@@ -194,7 +194,7 @@ function createNav() {
             items: [
                 {
                     text: '开源版',
-                    link: 'https://single.web.daxpay.cn/',
+                    link: 'https://open.web.daxpay.cn/',
                 },
             ],
         },
@@ -209,8 +209,8 @@ function createSidebar() {
         // 公共
         ...DaxPayCommon,
         // 开源支付网关单商户版
-        ...DaxPaySingle,
+        ...DaxPayopen,
         // 开源支付网关单多户版
-        ...DaxPayMulti,
+        ...DaxPayplus,
     }
 }

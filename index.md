@@ -15,10 +15,10 @@ hero:
   actions:
     - theme: brand
       text: 开源版
-      link: /single/guides/overview/项目介绍
+      link: /open/guides/overview/项目介绍
     - theme: alt
       text: 商业版
-      link: multi/guides/overview/项目介绍
+      link: plus/guides/overview/项目介绍
 features:
   - icon: 💡
     title: 主流技术栈
