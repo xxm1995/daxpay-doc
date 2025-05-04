@@ -10,14 +10,14 @@ export const DaxPayplus = {
                     text: '项目介绍',
                     link: '/plus/guides/overview/项目介绍',
                 },
-                {
-                    text: '功能列表',
-                    link: '/plus/guides/overview/功能列表',
-                },
-                {
-                    text: '系统架构',
-                    link: '/plus/guides/overview/系统架构',
-                },
+                // {
+                //     text: '功能列表',
+                //     link: '/plus/guides/overview/功能列表',
+                // },
+                // {
+                //     text: '系统架构',
+                //     link: '/plus/guides/overview/系统架构',
+                // },
                 {
                     text: '系统演示',
                     link: '/plus/guides/overview/系统演示',
@@ -155,4 +155,99 @@ export const DaxPayplus = {
             ]
         },
     ],
+    '/plus/manual/admin': [
+        {
+            text: '系统配置',
+            items: [
+
+                {
+                    text: '平台配置',
+                    link: '/plus/manual/admin/config/平台配置',
+                },
+                {
+                    text: '服务商配置',
+                    link: '/plus/manual/admin/config/服务商配置',
+                },
+                {
+                    text: '商户管理',
+                    link: '/plus/manual/admin/config/商户管理',
+                },
+                {
+                    text: '应用配置',
+                    link: '/plus/manual/admin/config/应用配置',
+                },
+                {
+                    text: '通道配置',
+                    link: '/plus/manual/admin/config/通道配置',
+                },
+                {
+                    text: '网关支付',
+                    link: '/plus/manual/admin/config/网关支付',
+                },
+                {
+                    text: '分账配置',
+                    link: '/plus/manual/admin/config/分账配置',
+                },
+                {
+                    text: '收款终端管理',
+                    link: '/plus/manual/admin/config/收款终端管理',
+                },
+            ],
+
+        },
+        {
+            text: '交易操作',
+            items: [
+                {
+                    text: '订单操作',
+                    link: '/plus/manual/admin/trade/订单操作',
+                },
+                {
+                    text: '交易记录',
+                    link: '/plus/manual/admin/trade/交易记录',
+                },
+                {
+                    text: '对账管理',
+                    link: '/plus/manual/admin/trade/对账管理',
+                },
+                {
+                    text: '商户通知',
+                    link: '/plus/manual/admin/trade/商户通知',
+                },
+            ]
+        }
+    ],
+    '/plus/manual/other': [
+        {
+            text: '商户端',
+            items: [
+                {
+                    text: '商户管理',
+                    link: '/plus/manual/other/merchant/商户管理',
+                }
+            ]
+        },
+        {
+            text: '网关端',
+            items: [
+                {
+                    text: '收银台',
+                    link: '/plus/manual/other/gateway/分账配置',
+                }
+            ]
+        },
+        {
+            text: '小程序',
+            items: [
+                {
+                    text: '快捷支付',
+                    link: '/plus/manual/other/miniapp/快捷支付',
+                },
+                {
+                    text: '扫码退款',
+                    link: '/plus/manual/other/miniapp/扫码退款',
+                },
+            ]
+        }
+    ]
 }

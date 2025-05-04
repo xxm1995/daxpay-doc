@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import {DefaultTheme, defineConfig} from 'vitepress'
 import renderPermaLink from './render-perma-link'
 import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 // @ts-check
@@ -14,9 +14,28 @@ const ogImage = '/logo.png'
 const ogTitle = 'open'
 const ogUrl = '/'
 
+const search: DefaultTheme.AlgoliaSearchOptions['locales'] = {
+    root: {
+        placeholder: '搜索文档',
+        translations: {
+            button: {
+                buttonAriaLabel: '搜索文档',
+                buttonText: '搜索文档',
+            },
+            modal: {
+                footer: {
+                    closeText: '关闭',
+                    navigateText: '切换',
+                    selectText: '选择',
+                },
+            },
+        },
+    },
+}
+
 export default defineConfig({
     title: 'DaxPay文档站',
-    description: 'DaxPay开源支付系统文档站',
+    description: 'DaxPay支付系统文档站',
     lang: 'zh-CN',
     outDir: './dist',
     lastUpdated: true,
@@ -24,17 +43,24 @@ export default defineConfig({
 
     themeConfig: {
         logo: '/logo.png',
+        darkModeSwitchTitle: '切换到深色模式',
+        lightModeSwitchTitle: '切换到浅色模式',
         editLink: {
             text: '为此页提供修改建议',
             pattern: 'https://github.com/xxm1995/daxpay-doc/blob/master/:path'
         },
         // 开启本地搜索
         search : {
+            options: {
+                locales: {
+                    ...search,
+                },
+            },
             provider: "local",
         },
         // 最后更新时间
         lastUpdated:{
-            text: '更新于',
+            text: '最后更新于',
             formatOptions: {
                 dateStyle: 'medium',
                 timeStyle: 'medium'
@@ -43,7 +69,7 @@ export default defineConfig({
         // 目录大纲
         outline:{
             level: [2,3],
-            label: '目录大纲'
+            label: '页面导航'
         },
         docFooter: {
             prev: '上一篇',
@@ -96,9 +122,8 @@ function createHead(): HeadConfig[] {
 
 /**
  * 导航栏
- * @type {()=>import('./theme-default/config').DefaultTheme.NavItem[]}
  */
-function createNav() {
+function createNav(): DefaultTheme.NavItem[] {
     return [
         {
             text: '概述',
@@ -107,10 +132,6 @@ function createNav() {
                     text: "项目介绍",
                     link: "/common/guides/项目介绍",
                 },
-                // {
-                //     text: "版本差异",
-                //     link: "/common/guides/版本差异",
-                // },
                 {
                     text: "名词解释",
                     link: "/common/guides/名词解释",
@@ -136,6 +157,10 @@ function createNav() {
                     text: "操作手册",
                     link: "/open/admin/config/平台配置",
                 },
+                {
+                    text: "付费扩展包",
+                    link: "/open/guides/expansion/付费扩展包",
+                }
             ]
         },
         {
@@ -149,14 +174,14 @@ function createNav() {
                     text: "接口对接",
                     link: "/plus/gateway/interface/overview/接口清单",
                 },
-                // {
-                //     text: "运营端",
-                //     link: "/plus/admin/config/运营端",
-                // },
-                // {
-                //     text: "商户端",
-                //     link: "/plus/merchant/config/商户端",
-                // },
+                {
+                    text: "操作手册(运营端)",
+                    link: "/plus/manual/admin/config/平台配置",
+                },
+                {
+                    text: "操作手册(其他端)",
+                    link: "/plus/manual/other/merchant/商户管理",
+                },
             ]
         },
         {
@@ -190,14 +215,9 @@ function createNav() {
             ],
         },
         {
-            text: '演示',
-            items: [
-                {
-                    text: '开源版',
-                    link: 'https://open.web.daxpay.cn/',
-                },
-            ],
-        },
+            text: '功能对比',
+            link: 'https://docs.qq.com/sheet/DQnpsekN2U25vWm1Q?tab=BB08J2',
+        }
     ];
 }
 

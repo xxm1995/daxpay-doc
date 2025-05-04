@@ -26,16 +26,20 @@ export const DaxPayCommon = {
                     link: '/common/guides/项目介绍',
                 },
                 {
-                    text: '版本差异',
-                    link: '/common/guides/版本差异',
-                },
-                {
                     text: '名词解释',
                     link: '/common/guides/名词解释',
                 },
                 {
+                    text: '系统答疑',
+                    link: '/common/guides/系统答疑',
+                },
+                {
                     text: '常见问题',
                     link: '/common/guides/常见问题',
+                },
+                {
+                    text: 'LICENSE',
+                    link: '/common/guides/LICENSE',
                 },
             ]
         },

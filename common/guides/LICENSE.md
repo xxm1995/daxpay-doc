@@ -1,4 +1,4 @@
-# 借鉴和部分参考的开源项目
+# 借鉴和参考的开源项目
 
 Spring Cloud Gateway整合Swagger2 Demo，全网首例：
 https://gitee.com/wxdfun/sw

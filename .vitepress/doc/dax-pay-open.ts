@@ -10,14 +10,14 @@ export const DaxPayopen = {
                     text: '项目介绍',
                     link: '/open/guides/overview/项目介绍',
                 },
-                {
-                    text: '功能列表',
-                    link: '/open/guides/overview/功能列表',
-                },
-                {
-                    text: '系统架构',
-                    link: '/open/guides/overview/系统架构',
-                },
+                // {
+                //     text: '功能列表',
+                //     link: '/open/guides/overview/功能列表',
+                // },
+                // {
+                //     text: '系统架构',
+                //     link: '/open/guides/overview/系统架构',
+                // },
                 {
                     text: '系统演示',
                     link: '/open/guides/overview/系统演示',
@@ -44,10 +44,6 @@ export const DaxPayopen = {
         {
             text: "FAQ",
             items: [
-                {
-                    text: '常见问题',
-                    link: '/open/guides/other/常见问题',
-                },
                 {
                     text: '常量和状态表',
                     link: '/open/guides/other/常量和状态表',

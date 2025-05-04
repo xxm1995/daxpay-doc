@@ -6,16 +6,17 @@ SDK是基于Java8开发的，除依赖`hutool`工具包外，不与任何第三�
 
 ## 引入SDK
 
-在项目中引入sdk依赖，SDK与网关项目版本号保持一致，如网关项目为3.0.0，sdk版本为3.0.0，跨版本可能会产生兼容性问题。
+在项目中引入sdk依赖，SDK与网关项目版本号保持一致，如网关项目为3.0.0，sdk版本为3.0.0，跨版本可能会产生兼容性问题。sdk未发不到maven中央仓库，需要手动引入。
 
-最近版本见 [maven中央仓库](https://mvnrepository.com/artifact/cn.daxpay/daxpay-plus-sdk)
+- 在`daxpay-plus-sdk`模块下执行`mvn -DskipTests=true install`语句将sdk安装到本地仓库。
+- 在项目中引入sdk依赖进行使用
 
 ```xml
-  <dependency>
-    <groupId>cn.daxpay</groupId>
-    <artifactId>daxpay-plus-sdk</artifactId>
-    <version>${latest.version}</version>
-  </dependency>
+<dependency>
+  <groupId>cn.daxpay</groupId>
+  <artifactId>daxpay-plus-sdk</artifactId>
+  <version>${latest.version}</version>
+</dependency>
 ```
 
 ## 初始化SDK
