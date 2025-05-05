@@ -189,8 +189,8 @@ export const DaxPayplus = {
                     link: '/plus/manual/admin/config/分账配置',
                 },
                 {
-                    text: '收款终端管理',
-                    link: '/plus/manual/admin/config/收款终端管理',
+                    text: '收款终端',
+                    link: '/plus/manual/admin/config/收款终端',
                 },
             ],
 
@@ -231,8 +231,8 @@ export const DaxPayplus = {
             text: '网关端',
             items: [
                 {
-                    text: '收银台',
-                    link: '/plus/manual/other/gateway/分账配置',
+                    text: '使用说明',
+                    link: '/plus/manual/other/gateway/使用说明',
                 }
             ]
         },
