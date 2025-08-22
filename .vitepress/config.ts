@@ -5,7 +5,6 @@ import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 import {HeadConfig} from "vitepress/types/shared";
 
 import {DaxPayopen} from "./doc/dax-pay-open";
-import {DaxPayplus} from "./doc/dax-pay-plus";
 import {DaxPayCommon} from "./doc/dax-pay-common";
 
 const ogDescription =
@@ -164,36 +163,11 @@ function createNav(): DefaultTheme.NavItem[] {
             ]
         },
         {
-            text: "商业版",
-            items: [
-                {
-                    text: "快速指南",
-                    link: "/plus/guides/overview/项目介绍",
-                },
-                {
-                    text: "接口对接",
-                    link: "/plus/gateway/interface/overview/接口清单",
-                },
-                {
-                    text: "操作手册(运营端)",
-                    link: "/plus/manual/admin/config/平台配置",
-                },
-                {
-                    text: "操作手册(其他端)",
-                    link: "/plus/manual/other/merchant/商户管理",
-                },
-            ]
-        },
-        {
             text: "用户协议",
             items: [
                 {
                     text: "开源版",
                     link: "/common/protocol/开源版",
-                },
-                {
-                    text: "商业版",
-                    link: "/common/protocol/商业版",
                 },
             ]
         },
@@ -228,9 +202,7 @@ function createSidebar() {
     return {
         // 公共
         ...DaxPayCommon,
-        // 开源支付网关单商户版
+        // 开源版
         ...DaxPayopen,
-        // 开源支付网关单多户版
-        ...DaxPayplus,
     }
 }

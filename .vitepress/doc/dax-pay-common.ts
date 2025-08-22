@@ -10,10 +10,6 @@ export const DaxPayCommon = {
                     text: '开源版',
                     link: '/common/protocol/开源版',
                 },
-                {
-                    text: '商业版',
-                    link: '/common/protocol/商业版',
-                },
             ]
         },
     ],

@@ -18,7 +18,7 @@ hero:
       link: /open/guides/overview/项目介绍
     - theme: brand
       text: 商业版
-      link: /plus/guides/overview/项目介绍
+      link: https://docs.qq.com/sheet/DQnpsekN2U25vWm1Q?tab=BB08J2
 features:
   - icon: 💡
     title: 主流技术栈
