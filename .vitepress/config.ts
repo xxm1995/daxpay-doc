@@ -34,7 +34,7 @@ const search: DefaultTheme.AlgoliaSearchOptions['locales'] = {
 
 export default defineConfig({
     title: 'DaxPay文档站',
-    description: 'DaxPay支付系统文档站',
+    description: 'DaxPay开源版文档站',
     lang: 'zh-CN',
     outDir: './dist',
     lastUpdated: true,
@@ -189,8 +189,8 @@ function createNav(): DefaultTheme.NavItem[] {
             ],
         },
         {
-            text: '功能对比',
-            link: 'https://docs.qq.com/sheet/DQnpsekN2U25vWm1Q?tab=BB08J2',
+            text: '商业版',
+            link: 'https://plus.daxpay.cn',
         }
     ];
 }
