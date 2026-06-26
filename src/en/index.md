@@ -13,8 +13,8 @@ hero:
       text: Quick Start
       link: /en/getting-started/quick-start
     - theme: alt
-      text: GitHub
-      link: https://github.com/dromara/dax-pay
+      text: Enterprise
+      link: https://plus.daxpay.cn
 
 features:
   - icon: 💳

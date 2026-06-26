@@ -27,6 +27,13 @@ export const zh = defineConfig({
         timeStyle: 'medium',
       },
     },
+    // 404 页面文案
+    notFound: {
+      title: '页面未找到',
+      quote: '您访问的页面不存在或已被移除。',
+      linkText: '返回首页',
+      linkLabel: '返回首页',
+    },
     // 在 GitHub 编辑此页
     editLink: {
       pattern:

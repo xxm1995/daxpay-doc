@@ -26,6 +26,13 @@ export const en = defineConfig({
         timeStyle: 'medium',
       },
     },
+    // 404 页面文案
+    notFound: {
+      title: 'Page Not Found',
+      quote: 'The page you are looking for does not exist or has been removed.',
+      linkText: 'Back to Home',
+      linkLabel: 'Back to home',
+    },
     editLink: {
       pattern:
         'https://github.com/dromara/dax-pay/edit/main/dax-pay-doc/src/:path',
