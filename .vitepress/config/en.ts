@@ -164,6 +164,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: 'Changelog', link: '/en/resources/changelog' },
         { text: 'Contributing', link: '/en/resources/contributing' },
         { text: 'License', link: '/en/resources/license' },
+        { text: 'Examples', link: '/en/resources/examples' },
       ],
     },
   ]

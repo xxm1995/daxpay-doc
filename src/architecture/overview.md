@@ -34,4 +34,14 @@ dax-pay-open/
 | `dax-pay-channel-one` | 单一支付渠道对接 | HTTP |
 | `dax-pay-iot` | IoT 硬件通信(云音箱) | HTTP |
 
+主应用与各子服务的调用关系:
+
+```mermaid
+graph TD
+    P[dax-pay-open<br/>主应用 端口 12121] -->|HTTP| C1[dax-pay-channel-one<br/>通道适配 20100]
+    P -->|HTTP| IOT[dax-pay-iot<br/>IoT 通信]
+    P --> DB[(PostgreSQL)]
+    P --> R[(Redis)]
+```
+
 子应用是主项目结构的**轻量子集**:platform 仅保留 core + common(i18n/json),不含 capability/service。通用契约(DTO/接口/异常)放入 `platform-core`,便于后续 channel-2/3/4 复用。各子应用独立 git、独立版本,无 maven 依赖,仅结构对标。

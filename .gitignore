@@ -2,6 +2,8 @@
 dist/
 .vitepress/cache/
 .vitepress/dist/
+.vitepress/dev.log
+.vitepress/dev.err
 .astro/
 
 # 依赖

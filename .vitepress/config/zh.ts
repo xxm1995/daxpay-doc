@@ -150,6 +150,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '更新日志', link: '/resources/changelog' },
         { text: '贡献指南', link: '/resources/contributing' },
         { text: '开源协议', link: '/resources/license' },
+        { text: '组件示例', link: '/resources/examples' },
       ],
     },
   ]

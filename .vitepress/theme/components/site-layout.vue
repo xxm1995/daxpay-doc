@@ -3,6 +3,10 @@ import { nextTick, onMounted, watch } from 'vue'
 import mediumZoom from 'medium-zoom'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import {
+  NolebaseEnhancedReadabilitiesMenu,
+  NolebaseEnhancedReadabilitiesScreenMenu,
+} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 
 const { Layout } = DefaultTheme
 const route = useRoute()
@@ -24,7 +28,16 @@ watch(
 </script>
 
 <template>
-  <Layout />
+  <Layout>
+    <!-- 阅读增强菜单:宽屏导航栏 -->
+    <template #nav-bar-content-after>
+      <NolebaseEnhancedReadabilitiesMenu />
+    </template>
+    <!-- 阅读增强菜单:窄屏抽屉 -->
+    <template #nav-screen-content-after>
+      <NolebaseEnhancedReadabilitiesScreenMenu />
+    </template>
+  </Layout>
 </template>
 
 <style>

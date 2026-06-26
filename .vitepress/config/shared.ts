@@ -5,6 +5,7 @@ import {
   groupIconMdPlugin,
   groupIconVitePlugin,
 } from 'vitepress-plugin-group-icons'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // 顶层共享配置(所有语言通用)
 export const shared = defineConfig({
@@ -23,6 +24,24 @@ export const shared = defineConfig({
     // group-icons 代码块图标插件(Markdown 层)
     preConfig(md) {
       md.use(groupIconMdPlugin)
+    },
+    config(md) {
+      // Tabs 标签页语法插件(:::tabs)
+      md.use(tabsMarkdownPlugin)
+      // Mermaid 图表:拦截 ```mermaid 代码块,交给 <Mermaid> 组件客户端渲染
+      // 避开 shiki,内容用 encodeURIComponent 编码后通过 props 传入组件
+      const defaultFence = md.renderer.rules.fence!
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        const lang = token.info.trim().toLowerCase()
+        // mermaid 图表与 markmap 思维导图:拦截代码块交给对应组件客户端渲染
+        if (lang === 'mermaid' || lang === 'markmap') {
+          const code = encodeURIComponent(token.content.replace(/\n$/, ''))
+          const tag = lang === 'mermaid' ? 'Mermaid' : 'Markmap'
+          return `<${tag} graph="${code}" />`
+        }
+        return defaultFence(tokens, idx, options, env, self)
+      }
     },
   },
   themeConfig: {
@@ -67,6 +86,20 @@ export const shared = defineConfig({
       // group-icons 代码块图标插件(Vite 层,注入虚拟 CSS 与图标资源)
       groupIconVitePlugin(),
     ],
+    // Nolebase 阅读增强插件为 ESM,需交由 Vite 处理而非外置
+    optimizeDeps: {
+      exclude: [
+        '@nolebase/vitepress-plugin-enhanced-readabilities/client',
+        'vitepress',
+        '@nolebase/ui',
+      ],
+    },
+    ssr: {
+      noExternal: [
+        '@nolebase/vitepress-plugin-enhanced-readabilities',
+        '@nolebase/ui',
+      ],
+    },
   },
 })
 

@@ -13,3 +13,17 @@ html.dark {
 .VPNavBarMenuGroup.active {
   border-bottom-color: var(--vp-c-brand-1);
 }
+
+/**
+ * 布局:左右栏目贴边,扩大中间可视区域
+ */
+:root {
+  /* 加宽整体页面容器,导航栏/首页在宽屏更舒展 */
+  --vp-layout-max-width: 1728px;
+}
+
+/* 放宽正文宽度上限(默认主题 688px),配合阅读增强滑块进一步调整 */
+/* !important 用于覆盖 VPDoc 组件的 scoped 样式 */
+.VPDoc.has-aside .content-container {
+  max-width: 1024px !important;
+}

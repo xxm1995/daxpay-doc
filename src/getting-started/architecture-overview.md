@@ -18,13 +18,13 @@ DaxPay 采用 monorepo 组织,主应用通过 HTTP 调用各独立子服务,实�
 
 ## 调用关系
 
-```
-业务系统 ──HTTP(签名)──▶ dax-pay-open(主应用)
-                              │
-              ┌───────────────┼───────────────┐
-              ▼               ▼               ▼
-      dax-pay-channel-one  dax-pay-iot    PostgreSQL / Redis
-        (通道适配)         (IoT 通信)
+```mermaid
+graph LR
+    BIZ[业务系统] -->|HTTP 签名| P[dax-pay-open<br/>主应用]
+    P --> C1[dax-pay-channel-one<br/>通道适配]
+    P --> IOT[dax-pay-iot<br/>IoT 通信]
+    P --> DB[(PostgreSQL)]
+    P --> R[(Redis)]
 ```
 
 ## 子项目职责
