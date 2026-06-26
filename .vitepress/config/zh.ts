@@ -5,7 +5,9 @@ import { defineConfig } from 'vitepress'
 // 中文 locale 配置(root 语言)
 export const zh = defineConfig({
   description: 'DaxPay 开源支付系统官方文档',
+  title: 'DaxPay 开源版',
   themeConfig: {
+    siteTitle: 'DaxPay开源版',
     // —— UI 文案本地化 ——
     darkModeSwitchLabel: '主题',
     darkModeSwitchTitle: '切换到深色模式',
@@ -60,27 +62,35 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '^/getting-started/',
     },
     {
-      text: '部署',
-      link: '/deployment/build',
-      activeMatch: '^/deployment/',
-    },
-    {
-      text: '架构设计',
-      link: '/architecture/overview',
-      activeMatch: '^/architecture/',
-    },
-    {
-      text: '开发指南',
-      link: '/development/backend-conventions',
-      activeMatch: '^/development/',
+      text: '操作指南',
+      link: '/operation-guide/introduction',
+      activeMatch: '^/operation-guide/',
     },
     { text: '接口文档', link: '/api/overview', activeMatch: '^/api/' },
     {
-      text: '数据库',
-      link: '/database/initialization',
-      activeMatch: '^/database/',
+      text: '程序扩展',
+      link: '/extension/introduction',
+      activeMatch: '^/extension/',
     },
-    { text: '资源', link: '/resources/faq', activeMatch: '^/resources/' },
+    {
+      // 交流群:跳转站内 License 页(QQ群/微信/公众号)
+      text: '交流群',
+      link: '/resources/license',
+      activeMatch: '^/resources/license',
+    },
+    {
+      // 系统演示:跳转到项目介绍页
+      text: '系统演示',
+      link: '/getting-started/introduction',
+    },
+    {
+      // 系统源码:下拉菜单,GitHub / Gitee 双仓库
+      text: '系统源码',
+      items: [
+        { text: 'GitHub', link: 'https://github.com/dromara/dax-pay' },
+        { text: 'Gitee', link: 'https://gitee.com/dromara/dax-pay' },
+      ],
+    },
   ]
 }
 
@@ -94,6 +104,13 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '特色功能', link: '/getting-started/features' },
         { text: '架构总览', link: '/getting-started/architecture-overview' },
         { text: '快速开始', link: '/getting-started/quick-start' },
+      ],
+    },
+    {
+      text: '操作指南',
+      collapsed: false,
+      items: [
+        { text: '使用入门', link: '/operation-guide/introduction' },
       ],
     },
     {
@@ -126,6 +143,13 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '数据库规范', link: '/development/database-conventions' },
         { text: '国际化', link: '/development/i18n' },
         { text: '通道对接', link: '/development/channel-integration' },
+      ],
+    },
+    {
+      text: '程序扩展',
+      collapsed: false,
+      items: [
+        { text: '扩展入门', link: '/extension/introduction' },
       ],
     },
     {

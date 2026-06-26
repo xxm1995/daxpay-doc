@@ -11,7 +11,6 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 export const shared = defineConfig({
   // 内容目录:所有 Markdown 放在 src/ 下
   srcDir: 'src',
-  title: 'DaxPay',
   description: 'DaxPay 开源支付系统官方文档',
   // 默认深色模式
   appearance: 'dark',
@@ -46,7 +45,6 @@ export const shared = defineConfig({
   },
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: 'DaxPay开源版文档站',
     // 本地搜索(minisearch),按语言自动分区
     // search.options.locales 集中配置各语言翻译,避免 locale 级 themeConfig shallow merge 丢失 provider
     search: {

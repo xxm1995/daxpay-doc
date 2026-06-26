@@ -5,7 +5,9 @@ import { defineConfig } from 'vitepress'
 // English locale configuration
 export const en = defineConfig({
   description: 'DaxPay open-source payment system official documentation',
+  title: 'DaxPay Open-Source',
   themeConfig: {
+    siteTitle: 'DaxPay Open-Source',
     darkModeSwitchLabel: 'Theme',
     darkModeSwitchTitle: 'Switch to dark theme',
     lightModeSwitchTitle: 'Switch to light theme',
@@ -55,30 +57,34 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '^/en/getting-started/',
     },
     {
-      text: 'Deployment',
-      link: '/en/deployment/build',
-      activeMatch: '^/en/deployment/',
-    },
-    {
-      text: 'Architecture',
-      link: '/en/architecture/overview',
-      activeMatch: '^/en/architecture/',
-    },
-    {
-      text: 'Development',
-      link: '/en/development/backend-conventions',
-      activeMatch: '^/en/development/',
+      text: 'Operation Guide',
+      link: '/en/operation-guide/introduction',
+      activeMatch: '^/en/operation-guide/',
     },
     { text: 'API', link: '/en/api/overview', activeMatch: '^/en/api/' },
     {
-      text: 'Database',
-      link: '/en/database/initialization',
-      activeMatch: '^/en/database/',
+      text: 'Extensions',
+      link: '/en/extension/introduction',
+      activeMatch: '^/en/extension/',
     },
     {
-      text: 'Resources',
-      link: '/en/resources/faq',
-      activeMatch: '^/en/resources/',
+      // Community: link to in-site License page (QQ/WeChat/Official Account)
+      text: 'Community',
+      link: '/en/resources/license',
+      activeMatch: '^/en/resources/license',
+    },
+    {
+      // Live Demo: link to introduction page
+      text: 'Live Demo',
+      link: '/en/getting-started/introduction',
+    },
+    {
+      // Source Code: dropdown, GitHub & Gitee mirrors
+      text: 'Source Code',
+      items: [
+        { text: 'GitHub', link: 'https://github.com/dromara/dax-pay' },
+        { text: 'Gitee', link: 'https://gitee.com/dromara/dax-pay' },
+      ],
     },
   ]
 }
@@ -96,6 +102,13 @@ function sidebar(): DefaultTheme.SidebarItem[] {
           link: '/en/getting-started/architecture-overview',
         },
         { text: 'Quick Start', link: '/en/getting-started/quick-start' },
+      ],
+    },
+    {
+      text: 'Operation Guide',
+      collapsed: false,
+      items: [
+        { text: 'Getting Started', link: '/en/operation-guide/introduction' },
       ],
     },
     {
@@ -140,6 +153,13 @@ function sidebar(): DefaultTheme.SidebarItem[] {
           text: 'Channel Integration',
           link: '/en/development/channel-integration',
         },
+      ],
+    },
+    {
+      text: 'Extensions',
+      collapsed: false,
+      items: [
+        { text: 'Getting Started', link: '/en/extension/introduction' },
       ],
     },
     {
