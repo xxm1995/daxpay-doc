@@ -1,0 +1,15 @@
+/* 暗色模式色彩方案 */
+html.dark {
+  color-scheme: dark;
+}
+
+/* 顶部导航栏选中项下划线高亮 */
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup {
+  border-bottom: 1px solid transparent;
+}
+
+.VPNavBarMenuLink.active,
+.VPNavBarMenuGroup.active {
+  border-bottom-color: var(--vp-c-brand-1);
+}

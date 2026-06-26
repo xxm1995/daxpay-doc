@@ -1,7 +1,7 @@
 # 构建输出
 dist/
-
-# Astro 生成的类型与运行时缓存
+.vitepress/cache/
+.vitepress/dist/
 .astro/
 
 # 依赖
