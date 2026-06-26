@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightThemeNova from 'starlight-theme-nova';
 
 // DaxPay 文档站配置
 // 部署时按需调整 site 与 base:
@@ -13,6 +14,8 @@ export default defineConfig({
   },
   integrations: [
     starlight({
+      // 主题插件:starlight-theme-nova(顶部导航栏 + 现代化视觉 + 增强代码块)
+      plugins: [starlightThemeNova()],
       title: 'DaxPay',
       description: 'DaxPay 开源支付系统官方文档',
       // 双前缀对等:中文 /zh-cn/,英文 /en/。首页 / 重定向到 /zh-cn/
