@@ -11,6 +11,8 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 export const shared = defineConfig({
   // 内容目录:所有 Markdown 放在 src/ 下
   srcDir: 'src',
+  // 构建输出目录:项目根目录下的 dist/(默认 .vitepress/dist)
+  outDir: 'dist',
   description: 'DaxPay 开源支付系统官方文档',
   // 默认深色模式
   appearance: 'dark',

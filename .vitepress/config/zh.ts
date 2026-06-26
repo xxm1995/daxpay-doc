@@ -79,9 +79,9 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '^/resources/license',
     },
     {
-      // 系统演示:跳转到项目介绍页
+      // 系统演示:跳转站内贡献指南页(与交流群分开,避免同时高亮)
       text: '系统演示',
-      link: '/getting-started/introduction',
+      link: '/resources/contributing',
     },
     {
       // 系统源码:下拉菜单,GitHub / Gitee 双仓库
@@ -94,11 +94,11 @@ function nav(): DefaultTheme.NavItem[] {
   ]
 }
 
-function sidebar(): DefaultTheme.SidebarItem[] {
-  return [
+function sidebar(): DefaultTheme.Sidebar {
+  // 开始树:开始 + 部署 + 架构设计 + 开发指南 + 数据库
+  const gettingStarted: DefaultTheme.SidebarItem[] = [
     {
       text: '开始',
-      collapsed: false,
       items: [
         { text: '项目介绍', link: '/getting-started/introduction' },
         { text: '特色功能', link: '/getting-started/features' },
@@ -107,15 +107,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: '操作指南',
-      collapsed: false,
-      items: [
-        { text: '使用入门', link: '/operation-guide/introduction' },
-      ],
-    },
-    {
       text: '部署',
-      collapsed: false,
       items: [
         { text: '编译部署', link: '/deployment/build' },
         { text: '配置说明', link: '/deployment/configuration' },
@@ -124,7 +116,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: '架构设计',
-      collapsed: false,
       items: [
         { text: '整体架构', link: '/architecture/overview' },
         { text: '主应用', link: '/architecture/main-app' },
@@ -136,7 +127,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: '开发指南',
-      collapsed: false,
       items: [
         { text: '后端编码规范', link: '/development/backend-conventions' },
         { text: '前端编码规范', link: '/development/frontend-conventions' },
@@ -146,15 +136,26 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: '程序扩展',
-      collapsed: false,
+      text: '数据库',
       items: [
-        { text: '扩展入门', link: '/extension/introduction' },
+        { text: '数据库初始化', link: '/database/initialization' },
+        { text: '表结构', link: '/database/schema' },
       ],
     },
+  ]
+
+  // 操作指南树
+  const operationGuide: DefaultTheme.SidebarItem[] = [
+    {
+      text: '操作指南',
+      items: [{ text: '使用入门', link: '/operation-guide/introduction' }],
+    },
+  ]
+
+  // 接口文档树
+  const api: DefaultTheme.SidebarItem[] = [
     {
       text: '接口文档',
-      collapsed: false,
       items: [
         { text: '接口概览', link: '/api/overview' },
         { text: '身份认证', link: '/api/authentication' },
@@ -165,17 +166,16 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '错误码', link: '/api/error-codes' },
       ],
     },
+  ]
+
+  // 程序扩展树:程序扩展 + 资源(含交流群)
+  const extension: DefaultTheme.SidebarItem[] = [
     {
-      text: '数据库',
-      collapsed: false,
-      items: [
-        { text: '数据库初始化', link: '/database/initialization' },
-        { text: '表结构', link: '/database/schema' },
-      ],
+      text: '程序扩展',
+      items: [{ text: '扩展入门', link: '/extension/introduction' }],
     },
     {
       text: '资源',
-      collapsed: false,
       items: [
         { text: '常见问题', link: '/resources/faq' },
         { text: '更新日志', link: '/resources/changelog' },
@@ -185,4 +185,20 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
   ]
+
+  return {
+    // 开始树覆盖的5个路径前缀
+    '/getting-started/': gettingStarted,
+    '/deployment/': gettingStarted,
+    '/architecture/': gettingStarted,
+    '/development/': gettingStarted,
+    '/database/': gettingStarted,
+    // 操作指南树
+    '/operation-guide/': operationGuide,
+    // 接口文档树
+    '/api/': api,
+    // 程序扩展树覆盖的2个路径前缀
+    '/extension/': extension,
+    '/resources/': extension,
+  }
 }

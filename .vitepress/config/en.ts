@@ -74,9 +74,9 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '^/en/resources/license',
     },
     {
-      // Live Demo: link to introduction page
+      // Live Demo: link to Contributing page (separate from Community to avoid double highlight)
       text: 'Live Demo',
-      link: '/en/getting-started/introduction',
+      link: '/en/resources/contributing',
     },
     {
       // Source Code: dropdown, GitHub & Gitee mirrors
@@ -89,11 +89,11 @@ function nav(): DefaultTheme.NavItem[] {
   ]
 }
 
-function sidebar(): DefaultTheme.SidebarItem[] {
-  return [
+function sidebar(): DefaultTheme.Sidebar {
+  // Getting Started tree: Getting Started + Deployment + Architecture + Development + Database
+  const gettingStarted: DefaultTheme.SidebarItem[] = [
     {
       text: 'Getting Started',
-      collapsed: false,
       items: [
         { text: 'Introduction', link: '/en/getting-started/introduction' },
         { text: 'Features', link: '/en/getting-started/features' },
@@ -105,15 +105,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: 'Operation Guide',
-      collapsed: false,
-      items: [
-        { text: 'Getting Started', link: '/en/operation-guide/introduction' },
-      ],
-    },
-    {
       text: 'Deployment',
-      collapsed: false,
       items: [
         { text: 'Build', link: '/en/deployment/build' },
         { text: 'Configuration', link: '/en/deployment/configuration' },
@@ -122,7 +114,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: 'Architecture',
-      collapsed: false,
       items: [
         { text: 'Overview', link: '/en/architecture/overview' },
         { text: 'Main App', link: '/en/architecture/main-app' },
@@ -134,7 +125,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: 'Development',
-      collapsed: false,
       items: [
         {
           text: 'Backend Conventions',
@@ -156,15 +146,28 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: 'Extensions',
-      collapsed: false,
+      text: 'Database',
       items: [
-        { text: 'Getting Started', link: '/en/extension/introduction' },
+        { text: 'Initialization', link: '/en/database/initialization' },
+        { text: 'Schema', link: '/en/database/schema' },
       ],
     },
+  ]
+
+  // Operation Guide tree
+  const operationGuide: DefaultTheme.SidebarItem[] = [
+    {
+      text: 'Operation Guide',
+      items: [
+        { text: 'Getting Started', link: '/en/operation-guide/introduction' },
+      ],
+    },
+  ]
+
+  // API tree
+  const api: DefaultTheme.SidebarItem[] = [
     {
       text: 'API',
-      collapsed: false,
       items: [
         { text: 'Overview', link: '/en/api/overview' },
         { text: 'Authentication', link: '/en/api/authentication' },
@@ -175,17 +178,18 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: 'Error Codes', link: '/en/api/error-codes' },
       ],
     },
+  ]
+
+  // Extensions tree: Extensions + Resources (includes Community)
+  const extension: DefaultTheme.SidebarItem[] = [
     {
-      text: 'Database',
-      collapsed: false,
+      text: 'Extensions',
       items: [
-        { text: 'Initialization', link: '/en/database/initialization' },
-        { text: 'Schema', link: '/en/database/schema' },
+        { text: 'Getting Started', link: '/en/extension/introduction' },
       ],
     },
     {
       text: 'Resources',
-      collapsed: false,
       items: [
         { text: 'FAQ', link: '/en/resources/faq' },
         { text: 'Changelog', link: '/en/resources/changelog' },
@@ -195,4 +199,20 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
   ]
+
+  return {
+    // Getting Started tree covers 5 path prefixes
+    '/en/getting-started/': gettingStarted,
+    '/en/deployment/': gettingStarted,
+    '/en/architecture/': gettingStarted,
+    '/en/development/': gettingStarted,
+    '/en/database/': gettingStarted,
+    // Operation Guide tree
+    '/en/operation-guide/': operationGuide,
+    // API tree
+    '/en/api/': api,
+    // Extensions tree covers 2 path prefixes
+    '/en/extension/': extension,
+    '/en/resources/': extension,
+  }
 }
