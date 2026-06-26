@@ -14,4 +14,4 @@ This section is under construction. Detailed operation guides will be added soon
 - Channel Integration
 - Daily Operations
 
-For now, see [Quick Start](/en/getting-started/quick-start) or join our [Community](/en/resources/license) for help.
+For now, see [Introduction](/en/getting-started/introduction) or join our [Community](/en/resources/license) for help.

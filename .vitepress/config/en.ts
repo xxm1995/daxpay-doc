@@ -52,7 +52,7 @@ export const en = defineConfig({
 function nav(): DefaultTheme.NavItem[] {
   return [
     {
-      text: 'Getting Started',
+      text: 'Quick Start',
       link: '/en/getting-started/introduction',
       activeMatch: '^/en/getting-started/',
     },
@@ -68,15 +68,15 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '^/en/extension/',
     },
     {
+      // Live Demo: link to Contributing page
+      text: 'Live Demo',
+      link: '/en/resources/contributing',
+    },
+    {
       // Community: link to in-site License page (QQ/WeChat/Official Account)
       text: 'Community',
       link: '/en/resources/license',
       activeMatch: '^/en/resources/license',
-    },
-    {
-      // Live Demo: link to Contributing page (separate from Community to avoid double highlight)
-      text: 'Live Demo',
-      link: '/en/resources/contributing',
     },
     {
       // Source Code: dropdown, GitHub & Gitee mirrors
@@ -90,18 +90,16 @@ function nav(): DefaultTheme.NavItem[] {
 }
 
 function sidebar(): DefaultTheme.Sidebar {
-  // Getting Started tree: Getting Started + Deployment + Architecture + Development + Database
-  const gettingStarted: DefaultTheme.SidebarItem[] = [
+  // Quick Start tree: System Intro + Deployment + Reference + Other
+  const quickStart: DefaultTheme.SidebarItem[] = [
     {
-      text: 'Getting Started',
+      text: 'System Introduction',
       items: [
         { text: 'Introduction', link: '/en/getting-started/introduction' },
         { text: 'Features', link: '/en/getting-started/features' },
-        {
-          text: 'Architecture Overview',
-          link: '/en/getting-started/architecture-overview',
-        },
-        { text: 'Quick Start', link: '/en/getting-started/quick-start' },
+        { text: 'Architecture Overview', link: '/en/getting-started/architecture-overview' },
+        { text: 'Overall Architecture', link: '/en/architecture/overview' },
+        { text: 'Sub-apps', link: '/en/architecture/apps' },
       ],
     },
     {
@@ -113,44 +111,18 @@ function sidebar(): DefaultTheme.Sidebar {
       ],
     },
     {
-      text: 'Architecture',
+      text: 'Reference Materials',
       items: [
-        { text: 'Overview', link: '/en/architecture/overview' },
-        { text: 'Main App', link: '/en/architecture/main-app' },
-        { text: 'Channel App', link: '/en/architecture/channel-app' },
-        { text: 'IoT App', link: '/en/architecture/iot-app' },
-        { text: 'Web UI', link: '/en/architecture/web-ui' },
-        { text: 'Mobile H5', link: '/en/architecture/h5' },
+        { text: 'Glossary', link: '/en/business/glossary' },
+        { text: 'WeChat OAuth2 Callback', link: '/en/business/wechat-oauth2' },
+        { text: 'Trade Status', link: '/en/codes/trade-status' },
+        { text: 'Channels & Methods', link: '/en/codes/channels' },
+        { text: 'Error Codes', link: '/en/codes/status-codes' },
       ],
     },
     {
-      text: 'Development',
-      items: [
-        {
-          text: 'Backend Conventions',
-          link: '/en/development/backend-conventions',
-        },
-        {
-          text: 'Frontend Conventions',
-          link: '/en/development/frontend-conventions',
-        },
-        {
-          text: 'Database Conventions',
-          link: '/en/development/database-conventions',
-        },
-        { text: 'Internationalization', link: '/en/development/i18n' },
-        {
-          text: 'Channel Integration',
-          link: '/en/development/channel-integration',
-        },
-      ],
-    },
-    {
-      text: 'Database',
-      items: [
-        { text: 'Initialization', link: '/en/database/initialization' },
-        { text: 'Schema', link: '/en/database/schema' },
-      ],
+      text: 'Other',
+      items: [{ text: 'FAQ', link: '/en/getting-started/faq' }],
     },
   ]
 
@@ -180,7 +152,7 @@ function sidebar(): DefaultTheme.Sidebar {
     },
   ]
 
-  // Extensions tree: Extensions + Resources (includes Community)
+  // Extensions tree: Extensions + Resources (FAQ moved to Quick Start)
   const extension: DefaultTheme.SidebarItem[] = [
     {
       text: 'Extensions',
@@ -191,7 +163,6 @@ function sidebar(): DefaultTheme.Sidebar {
     {
       text: 'Resources',
       items: [
-        { text: 'FAQ', link: '/en/resources/faq' },
         { text: 'Changelog', link: '/en/resources/changelog' },
         { text: 'Contributing', link: '/en/resources/contributing' },
         { text: 'License', link: '/en/resources/license' },
@@ -201,17 +172,13 @@ function sidebar(): DefaultTheme.Sidebar {
   ]
 
   return {
-    // Getting Started tree covers 5 path prefixes
-    '/en/getting-started/': gettingStarted,
-    '/en/deployment/': gettingStarted,
-    '/en/architecture/': gettingStarted,
-    '/en/development/': gettingStarted,
-    '/en/database/': gettingStarted,
-    // Operation Guide tree
+    '/en/getting-started/': quickStart,
+    '/en/deployment/': quickStart,
+    '/en/architecture/': quickStart,
+    '/en/business/': quickStart,
+    '/en/codes/': quickStart,
     '/en/operation-guide/': operationGuide,
-    // API tree
     '/en/api/': api,
-    // Extensions tree covers 2 path prefixes
     '/en/extension/': extension,
     '/en/resources/': extension,
   }

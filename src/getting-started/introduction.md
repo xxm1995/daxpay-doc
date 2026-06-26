@@ -36,6 +36,13 @@ DaxPay 是一个 monorepo,由多个子项目协同构成:
 | `dax-pay-ui` | Web 管理端(运营端 / 商户端) |
 | `dax-pay-h5` | 移动 H5 端(收银台) |
 
+## 路线图
+
+开源版当前提供 **运营端**(dax-pay-ui)与 **移动 H5 端**(dax-pay-h5)。以下能力已规划,将陆续开源:
+
+- 商户端管理后台
+- 商户 / 收银台小程序(UniApp 跨端)
+
 ## 开源协议
 
 基于 [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.html) 协议开源,受中华人民共和国相关法律法规的保护和限制。使用前请阅读用户授权使用协议与开源协议,如不同意请勿使用。

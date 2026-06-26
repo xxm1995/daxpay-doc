@@ -1,10 +1,8 @@
 # 构建输出
 dist/
 .vitepress/cache/
-.vitepress/dist/
 .vitepress/dev.log
 .vitepress/dev.err
-.astro/
 
 # 依赖
 node_modules/

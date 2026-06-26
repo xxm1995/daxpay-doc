@@ -49,7 +49,7 @@ export const zh = defineConfig({
     },
     // 顶部导航
     nav: nav(),
-    // 侧边栏(全局统一,7 大板块分组)
+    // 侧边栏
     sidebar: sidebar(),
   },
 })
@@ -57,7 +57,7 @@ export const zh = defineConfig({
 function nav(): DefaultTheme.NavItem[] {
   return [
     {
-      text: '开始',
+      text: '快速开始',
       link: '/getting-started/introduction',
       activeMatch: '^/getting-started/',
     },
@@ -73,15 +73,15 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '^/extension/',
     },
     {
+      // 系统演示:跳转站内贡献指南页
+      text: '系统演示',
+      link: '/resources/contributing',
+    },
+    {
       // 交流群:跳转站内 License 页(QQ群/微信/公众号)
       text: '交流群',
       link: '/resources/license',
       activeMatch: '^/resources/license',
-    },
-    {
-      // 系统演示:跳转站内贡献指南页(与交流群分开,避免同时高亮)
-      text: '系统演示',
-      link: '/resources/contributing',
     },
     {
       // 系统源码:下拉菜单,GitHub / Gitee 双仓库
@@ -95,19 +95,20 @@ function nav(): DefaultTheme.NavItem[] {
 }
 
 function sidebar(): DefaultTheme.Sidebar {
-  // 开始树:开始 + 部署 + 架构设计 + 开发指南 + 数据库
-  const gettingStarted: DefaultTheme.SidebarItem[] = [
+  // 快速开始树: 系统介绍 + 运行部署 + 参考资料 + 其他
+  const quickStart: DefaultTheme.SidebarItem[] = [
     {
-      text: '开始',
+      text: '系统介绍',
       items: [
         { text: '项目介绍', link: '/getting-started/introduction' },
         { text: '特色功能', link: '/getting-started/features' },
         { text: '架构总览', link: '/getting-started/architecture-overview' },
-        { text: '快速开始', link: '/getting-started/quick-start' },
+        { text: '整体架构', link: '/architecture/overview' },
+        { text: '子应用介绍', link: '/architecture/apps' },
       ],
     },
     {
-      text: '部署',
+      text: '运行部署',
       items: [
         { text: '编译部署', link: '/deployment/build' },
         { text: '配置说明', link: '/deployment/configuration' },
@@ -115,32 +116,18 @@ function sidebar(): DefaultTheme.Sidebar {
       ],
     },
     {
-      text: '架构设计',
+      text: '参考资料',
       items: [
-        { text: '整体架构', link: '/architecture/overview' },
-        { text: '主应用', link: '/architecture/main-app' },
-        { text: '通道子应用', link: '/architecture/channel-app' },
-        { text: 'IoT 子应用', link: '/architecture/iot-app' },
-        { text: 'Web 管理端', link: '/architecture/web-ui' },
-        { text: '移动 H5 端', link: '/architecture/h5' },
+        { text: '业务术语', link: '/business/glossary' },
+        { text: '微信 OAuth2 回调', link: '/business/wechat-oauth2' },
+        { text: '交易状态', link: '/codes/trade-status' },
+        { text: '通道与支付方式', link: '/codes/channels' },
+        { text: '系统状态码', link: '/codes/status-codes' },
       ],
     },
     {
-      text: '开发指南',
-      items: [
-        { text: '后端编码规范', link: '/development/backend-conventions' },
-        { text: '前端编码规范', link: '/development/frontend-conventions' },
-        { text: '数据库规范', link: '/development/database-conventions' },
-        { text: '国际化', link: '/development/i18n' },
-        { text: '通道对接', link: '/development/channel-integration' },
-      ],
-    },
-    {
-      text: '数据库',
-      items: [
-        { text: '数据库初始化', link: '/database/initialization' },
-        { text: '表结构', link: '/database/schema' },
-      ],
+      text: '其他',
+      items: [{ text: 'FAQ', link: '/getting-started/faq' }],
     },
   ]
 
@@ -168,7 +155,7 @@ function sidebar(): DefaultTheme.Sidebar {
     },
   ]
 
-  // 程序扩展树:程序扩展 + 资源(含交流群)
+  // 程序扩展树: 程序扩展 + 资源(FAQ 已移至快速开始)
   const extension: DefaultTheme.SidebarItem[] = [
     {
       text: '程序扩展',
@@ -177,7 +164,6 @@ function sidebar(): DefaultTheme.Sidebar {
     {
       text: '资源',
       items: [
-        { text: '常见问题', link: '/resources/faq' },
         { text: '更新日志', link: '/resources/changelog' },
         { text: '贡献指南', link: '/resources/contributing' },
         { text: '开源协议', link: '/resources/license' },
@@ -187,17 +173,13 @@ function sidebar(): DefaultTheme.Sidebar {
   ]
 
   return {
-    // 开始树覆盖的5个路径前缀
-    '/getting-started/': gettingStarted,
-    '/deployment/': gettingStarted,
-    '/architecture/': gettingStarted,
-    '/development/': gettingStarted,
-    '/database/': gettingStarted,
-    // 操作指南树
+    '/getting-started/': quickStart,
+    '/deployment/': quickStart,
+    '/architecture/': quickStart,
+    '/business/': quickStart,
+    '/codes/': quickStart,
     '/operation-guide/': operationGuide,
-    // 接口文档树
     '/api/': api,
-    // 程序扩展树覆盖的2个路径前缀
     '/extension/': extension,
     '/resources/': extension,
   }

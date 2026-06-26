@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /getting-started/quick-start
+      link: /getting-started/introduction
     - theme: alt
       text: 商业版
       link: https://plus.daxpay.cn

@@ -14,4 +14,4 @@ description: DaxPay 安装部署与日常使用操作指南
 - 通道接入
 - 日常运维
 
-如需提前了解,可参考 [快速开始](/getting-started/quick-start),或加入 [交流群](/resources/license) 反馈需求。
+如需提前了解,可参考 [项目介绍](/getting-started/introduction),或加入 [交流群](/resources/license) 反馈需求。

@@ -14,8 +14,8 @@ export const shared = defineConfig({
   // 构建输出目录:项目根目录下的 dist/(默认 .vitepress/dist)
   outDir: 'dist',
   description: 'DaxPay 开源支付系统官方文档',
-  // 默认深色模式
-  appearance: 'dark',
+  // 跟随系统深浅色模式
+  appearance: true,
   // 干净 URL(无 .html 后缀)
   cleanUrls: true,
   // 基于 git 的最后更新时间

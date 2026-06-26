@@ -15,8 +15,4 @@ description: 参与项目贡献
 
 ## 开发规范
 
-贡献代码前请阅读各端编码规范:
-
-- [后端编码规范](../development/backend-conventions)
-- [前端编码规范](../development/frontend-conventions)
-- [数据库规范](../development/database-conventions)
+贡献代码前请阅读仓库根目录下的 [AGENTS.md](https://github.com/dromara/dax-pay/blob/main/dax-pay-open/AGENTS.md),其中包含了后端、前端、数据库等各端编码规范。
